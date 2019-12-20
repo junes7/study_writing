@@ -1,7 +1,0 @@
-git add .
-
-git status
-
-git commit -m '아무거나'
-
-git push origin master
