@@ -42,29 +42,25 @@ window키 + pause break키 누르면 시스템 설정 상황이 나온다
 
  → 
 
-![image-20200211110546716](C:\Users\wnstj\AppData\Roaming\Typora\typora-user-images\image-20200211110546716.png)
+![image-20200211110546716](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110546716.png)
 
  → 
 
-![image-20200211110646387](C:\Users\wnstj\AppData\Roaming\Typora\typora-user-images\image-20200211110646387.png)
+![image-20200211110646387](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110646387.png)
 
  → 
 
-![image-20200211110722634](C:\Users\wnstj\AppData\Roaming\Typora\typora-user-images\image-20200211110722634.png)
+![image-20200211110722634](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110722634.png)
 
  → 
 
-![image-20200211110929643](C:\Users\wnstj\AppData\Roaming\Typora\typora-user-images\image-20200211110929643.png)
+![image-20200211110929643](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110929643.png)
 
  → 
 
-![image-20200211110949590](C:\Users\wnstj\AppData\Roaming\Typora\typora-user-images\image-20200211110949590.png)
+![image-20200211110949590](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110949590.png)
 
  → 
-
- → 
-
-
 
 
 
@@ -388,21 +384,498 @@ initial-setup-ks.cfg  다운로드  바탕화면  사진    음악
 * usr폴더는 윈도우로 치면 program files와 비슷하다.
 
 * dev폴더는 장치들이 위치하는 폴더이고 시스템의 모든 장치를 파일로 표현해 놓은 곳이다.
+
 * 디렉토리 만들기: mkdir test
+
 * 현재 폴더의 상위 폴더로 올라가기: cd ..
+
 * 최상위 폴더로 가기: cd /
+
 * 홈 디렉토리 폴더로 가기: cd ~
-*  
+
+* 빅데이터 플랫폼을 구축하기 위한 준비작업
+
+  3. 가상머신 복제하기
+     
+     -가상머신이 네 대 있다 가정하고 네 개의 가상머신을 만들어준다.
+   
+     * player 안에는 가상머신 복제기능이 없다.
+   * C:\Users\student\Documents\Virtual Machines 이 안에 들어가서 hadoop1 폴더 카피한다
+  
+![image-20200212093955033](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212093955033.png)
+  
+  
+  
+  * 여기서 i move it을 누르면 원래 파일이 가지고 있던 ip를 그대로 가져오고 I copied it 을 눌러야 새로운 ip를 할당받아온다.
 
 
 
 
 
+![image-20200212094510371](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212094510371.png)
+
+![image-20200212094329684](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212094329684.png)
 
 
 
+이  리눅스 시스템을 부팅했을때 유선 연결됨이 올라오지 않는다면 유선 네트워크 설정으로 가서 저 위 베어링 같은 설정 버튼을 누르고 아래 그림의 자동으로 연결을 체크해준다. 그리고 적용버튼을 눌러서 부팅될 때 적용될 수 있도록 해준다.
+
+* 하둡은 가상머신 4대가 하나의 서버처럼 사용된다.
+  * 각 머신마다 고유의 고정 ip를 가지고 있어야 한다.
+
+-ip확인 
+
+[root@localhost ~]# ifconfig
+
+이렇게 확인해준다.
+
+hadoop1: 192.168.111.132
+hadoop2: 192.168.111.131
+hadoop3: 192.168.111.130
+hadoop4: 192.168.111.128
 
 
+
+![image-20200212111352822](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212111352822.png)
+
+* 다음과 같이 화면 잠금을 꺼주면 된다.
+
+4. 하둡 서버를 구축하기 위한 클러스터링 설정하기
+
+   * 원격 접속 확인 방법
+
+     [root@localhost ~]# ssh 192.168.111.128
+     The authenticity of host '192.168.111.128 (192.168.111.128)' can't be established.
+     ECDSA key fingerprint is SHA256:1rj0b88qwaKsPhipxSQmsToBiaMMTng6j3sodFx4/4o.
+     ECDSA key fingerprint is MD5:71:a5:e3:fc:62:6e:69:cf:8a:f9:b1:e7:a5:7f:d2:c8.
+     Are you sure you want to continue connecting (yes/no)? yes
+     Warning: Permanently added '192.168.111.128' (ECDSA) to the list of known hosts.
+     root@192.168.111.128's password: 
+     Last login: Wed Feb 12 19:36:32 2020
+     ABRT에 의해 '2' 건의 문제가 발견되었습니다. (다음을 실행하여 보다 자세한 내용을 확인합니다: abrt-cli list --since 1581502829
+     [root@localhost ~]# exit
+     logout
+     Connection to 192.168.111.128 closed.
+
+     * 위의 exit이 로그아웃 명령어이다.
+
+     * 위의 ssh 192.168.111.128이 telnet포트를 암호화 한 후 접속한 것이다. 접속 포트 22번이다. (telnet은 23번이다.)
+
+       
+
+   ![image-20200212112515321](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212112515321.png)
+
+   sts에서 다음과 같이 하여 remote system explorer를 열어준다.
+
+   ![image-20200212112637017](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212112637017.png)
+
+   
+
+   ※ host-only vs NAT vs bridge
+
+   * host only
+
+   -guest PC를 하나로 묶어 인터넷 통신되게 만드는 것
+
+   -HOST는 공유기를 통해 인터넷에 접근한다.
+
+   * NAT
+
+   -
+
+   -
+
+   bridge
+
+   
+
+   
+
+    
+
+   -방화벽해제
+
+   * host명 변경 방법
+
+   h+tab을 주면 자동완성된다.
+
+   hostnamectl set-hostname hadoop01
+
+   hostnamectl set-hostname hadoop02
+
+   
+
+   host명인 localhost를 hadoop01로 변경해준다.
+
+   host명인 localhost를 hadoop02로 변경해준다.
+
+   확인할 때
+
+   [root@localhost ~]# hostname
+
+   하면 바뀐 호스트네임을 확인할 수 있다.
+
+   그리고 터미널 닫고 다시 열으면 다음과 같이 바뀌어 있다.
+
+   [root@localhost ~]#
+
+   여기에
+
+   [root@localhost ~]#hostnamectl set-hostname hadoop01
+
+   넣으면
+
+   [root@hadoop01 ~]# 이렇게 바뀌어 있다
+
+   
+
+   * 바뀐 호스트네임 원격접속으로 확인한다.
+
+   [root@hadoop01 ~]# ssh 192.168.111.131
+   root@192.168.111.131's password: 
+   Last login: Wed Feb 12 20:14:46 2020 from 192.168.111.132
+   [root@hadoop02 ~]# exit
+   logout
+   Connection to 192.168.111.131 closed.
+   [root@hadoop01 ~]# ssh 192.168.111.130
+   root@192.168.111.130's password: 
+   Permission denied, please try again.
+   root@192.168.111.130's password: 
+   Last failed login: Wed Feb 12 22:31:22 KST 2020 from 192.168.111.132 on ssh:notty
+   There was 1 failed login attempt since the last successful login.
+   Last login: Wed Feb 12 20:17:17 2020 from 192.168.111.132
+   [root@hadoop03 ~]# exit
+   logout
+   Connection to 192.168.111.130 closed.
+   [root@hadoop01 ~]# ssh 192.168.111.128
+   root@192.168.111.128's password: 
+   Last login: Wed Feb 12 20:17:37 2020 from 192.168.111.132
+   [root@hadoop04 ~]# exit
+   logout
+   Connection to 192.168.111.128 closed.
+   [root@hadoop01 ~]# 
+
+   
+
+   
+
+![image-20200212133923614](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212133923614.png)
+
+
+
+[root@hadoop01 ~]# systemctl list-units --type=service
+
+실행 중인 서비스 보기
+
+실행 중인 모든 서비스 목록을 보려면 위와 같이 명령어를 준다.
+
+현재의 모든 서비스들을 보여준다.
+
+![image-20200212134337155](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212134337155.png)
+
+
+
+끝까지 가면 ctrl c 눌러서 밖으로 나와준다.
+
+systemctl은 7버전부터 시스템 관리할 때 사용하는 명령어 이전 버전은 service를 사용하였다.
+
+
+
+[root@hadoop01 ~]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since 수 2020-02-12 19:21:30 KST; 3h 22min ago
+     Docs: man:firewalld(1)
+ Main PID: 1117 (firewalld)
+    Tasks: 2
+   CGroup: /system.slice/firewalld.service
+           └─1117 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid
+
+ 2월 12 19:21:28 localhost.localdomain systemd[1]: Starting firewalld - dynamic firewall.....
+ 2월 12 19:21:30 localhost.localdomain systemd[1]: Started firewalld - dynamic firewall ...n.
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@hadoop01 ~]# systemctl stop firewalld
+[root@hadoop01 ~]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: inactive (dead) since 수 2020-02-12 22:45:45 KST; 13s ago
+     Docs: man:firewalld(1)
+  Process: 1117 ExecStart=/usr/sbin/firewalld --nofork --nopid $FIREWALLD_ARGS (code=exited, status=0/SUCCESS)
+ Main PID: 1117 (code=exited, status=0/SUCCESS)
+
+ 2월 12 19:21:28 localhost.localdomain systemd[1]: Starting firewalld - dynamic firewall.....
+ 2월 12 19:21:30 localhost.localdomain systemd[1]: Started firewalld - dynamic firewall ...n.
+ 2월 12 22:45:44 hadoop01 systemd[1]: Stopping firewalld - dynamic firewall daemon...
+ 2월 12 22:45:45 hadoop01 systemd[1]: Stopped firewalld - dynamic firewall daemon.
+Hint: Some lines were ellipsized, use -l to show in full.
+
+현재시점으로 방화벽이 꺼졌다고 상황이 출력된다.
+
+[root@hadoop01 ~]#reboot
+
+명령어를 쳐서 재부팅시킨다.
+
+system kernel설정에 의해 방화벽이 다시 올라가 있다 그래서 아래의 명령어로 방화벽이 불가능하게 만든 다음에 상황을 살피고 다시 리부팅 시킨다.
+
+[root@hadoop01 ~]# systemctl disable firewalld
+Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+[root@hadoop01 ~]# systemctl stop firewalld
+[root@hadoop01 ~]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)
+   Active: inactive (dead)
+     Docs: man:firewalld(1)
+
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...?).
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...me.
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...me.
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...?).
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...?).
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...?).
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...?).
+ 2월 12 22:51:16 hadoop01 firewalld[3374]: WARNING: COMMAND_FAILED: '/usr/sbin/iptables -w10...?).
+ 2월 12 22:51:46 hadoop01 systemd[1]: Stopping firewalld - dynamic firewall daemon...
+ 2월 12 22:51:46 hadoop01 systemd[1]: Stopped firewalld - dynamic firewall daemon.
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@hadoop01 ~]#  reboot
+
+![image-20200212141742119](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212141742119.png)
+
+여기 있는 내용을 다 삭제해준다.
+
+192.168.111.132 hadoop01
+192.168.111.131 hadoop02
+192.168.111.130 hadoop03
+192.168.111.128 hadoop04
+
+그리고 위의 내용을 채워주고 저장해준다.
+
+그러나 혹시 reboot로 인해서 ip주소가 바뀌었으면 위의 작업을 다시 해 주어야 한다.
+
+<<빅데이터 플랫폼 구축>>
+
+* 1. vmware 설치
+* 2. 머신생성 - centos7
+
+* 3. 머신복제
+
+  -ip확인
+
+* 4. 머신 4대를 클러스터링
+
+-방화벽해제
+
+-hostname변경
+
+-DNS설정하는 작업 => 하위 순서로 들어가는 것
+
+*hosts파일 등록
+
+*네트워크 프로세스를 restart
+
+*설정확인 - 설정을 성공 완료했는지 확인해줄 것
+
+*네 대에 모두 적용이 되도록
+
+--hadoop01머신에서 hadoop02,  hadoop03,  hadoop04에 직접 접속할 것
+
+ [root@hadoop01 ~]# /etc/init.d/network restart
+Restarting network (via systemctl):                        [  OK  ]
+[root@hadoop01 ~]# ssh hadoop02
+The authenticity of host 'hadoop02 (192.168.111.131)' can't be established.
+ECDSA key fingerprint is SHA256:gWYbrhoXfz91Nnvc19vRk59IGurW/N4RJlN8J6dm1m0.
+ECDSA key fingerprint is MD5:f4:7c:e3:c6:57:17:11:1e:95:3b:7d:fd:55:e2:04:4d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'hadoop02' (ECDSA) to the list of known hosts.
+root@hadoop02's password: 
+Last login: Wed Feb 12 23:14:14 2020 from 192.168.111.132
+[root@hadoop02 ~]# 
+
+그러고 나면 위와 같이 hadoop01에서 다른 머신으로접속이 가능하다.
+
+[로컬 저장소로 copy]
+
+[원격 서버로 copy]
+
+```bash
+//scp copy할 파일(위치까지 명시) copy받을 서버의 위치
+
+scp    /etc/hosts 	root@hadoop02:/etc/hosts
+
+----    ---------   -----------------------
+명령어   copy할 파일   target서버의 위치와 파일명
+```
+
+[원격 서버에 실행명령]
+
+```javascript
+//ssh 서버 "실행할명령문
+      ---
+      ip, domain
+```
+
+* 확인작업
+
+[root@hadoop01 ~]# scp /etc/hosts root@hadoop02:/etc/hosts
+root@hadoop02's password: 
+hosts                              100%  100    46.5KB/s   00:00    
+[root@hadoop01 ~]# ssh hadoop02
+root@hadoop02's password: 
+Last login: Wed Feb 12 23:29:47 2020 from 192.168.111.132
+[root@hadoop02 ~]# exit
+logout
+Connection to hadoop02 closed.
+[root@hadoop01 ~]# ssh hadoop02 "/etc/init.d/network restart"
+root@hadoop02's password: 
+Restarting network (via systemctl):  [  OK  ]
+[root@hadoop01 ~]# ssh hadoop02
+root@hadoop02's password: 
+Last login: Wed Feb 12 23:45:05 2020 from hadoop01
+[root@hadoop02 ~]# ssh hadoop03
+The authenticity of host 'hadoop03 (192.168.111.130)' can't be established.
+ECDSA key fingerprint is SHA256:1rj0b88qwaKsPhipxSQmsToBiaMMTng6j3sodFx4/4o.
+ECDSA key fingerprint is MD5:71:a5:e3:fc:62:6e:69:cf:8a:f9:b1:e7:a5:7f:d2:c8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'hadoop03,192.168.111.130' (ECDSA) to the list of known hosts.
+root@hadoop03's password: 
+Last login: Wed Feb 12 23:31:04 2020 from 192.168.111.132
+[root@hadoop03 ~]# exit
+logout
+Connection to hadoop03 closed.
+[root@hadoop02 ~]# exit
+logout
+Connection to hadoop02 closed.
+
+* 암호화된 통신을 위해서 공개키생성 후 배포한다.
+
+  우리는 하둡 실행을 하둡 계정에서 실행할 것이다.
+
+  -암호화된 통신을 위해서 
+
+  xwindow가 GUI(그래픽 유저 환경)를 뜻한다.
+
+* 현재 hadoop 계정의 루트 폴더에 들어와 있다.
+
+
+
+* 숨김파일 보이기 체크 해제해준다.
+* 
+
+remote remote
+
+4. -네트워크 설정
+
+   -DNS 설정
+
+
+
+[root@hadoop01 ~]# su hadoop
+[hadoop@hadoop01 root]$ cd ~
+[hadoop@hadoop01 ~]$ ssh hadoop02
+The authenticity of host 'hadoop02 (192.168.111.131)' can't be established.
+ECDSA key fingerprint is SHA256:gWYbrhoXfz91Nnvc19vRk59IGurW/N4RJlN8J6dm1m0.
+ECDSA key fingerprint is MD5:f4:7c:e3:c6:57:17:11:1e:95:3b:7d:fd:55:e2:04:4d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'hadoop02,192.168.111.131' (ECDSA) to the list of known hosts.
+hadoop@hadoop02's password: 
+Permission denied, please try again.
+hadoop@hadoop02's password: 
+Last failed login: Thu Feb 13 00:21:31 KST 2020 from hadoop01 on ssh:notty
+There was 1 failed login attempt since the last successful login.
+[hadoop@hadoop02 ~]$ exit
+logout
+Connection to hadoop02 closed.
+[hadoop@hadoop01 ~]$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/hadoop/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/hadoop/.ssh/id_rsa.
+Your public key has been saved in /home/hadoop/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:nFzQRjfC8s7ZUp5UCRiR7ke4Pmfr4uLo5MWlUjoZ/SE hadoop@hadoop01
+The key's randomart image is:
++---[RSA 2048]----+
+|        .+==+. . |
+|        ..*o .o  |
+|         =.. .   |
+|       + o+ +    |
+|      . E+oO .   |
+|       * =B.=    |
+|      * +..o     |
+|     o =. + o    |
+|     .+..o.*o.   |
++----[SHA256]-----+
+
+[hadoop@hadoop01 ~]$ cd .ssh
+[hadoop@hadoop01 .ssh]$ ls
+id_rsa  id_rsa.pub  known_hosts
+[hadoop@hadoop01 .ssh]$ ssh-copy-id -i id_rsa.pub hadoop@hadoop02
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+hadoop@hadoop02's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'hadoop@hadoop02'"
+and check to make sure that only the key(s) you wanted were added.
+
+[hadoop@hadoop01 .ssh]$
+
+ssh hadoop02했을때 비밀번호를 묻지 말아야 한다.
+
+```bash
+[hadoop@hadoop01 .ssh]$ ssh hadoop03
+Last login: Thu Feb 13 00:33:03 2020 from hadoop01
+[hadoop@hadoop03 ~]$ ssh hadoop04
+The authenticity of host 'hadoop04 (192.168.111.128)' can't be established.
+ECDSA key fingerprint is SHA256:1rj0b88qwaKsPhipxSQmsToBiaMMTng6j3sodFx4/4o.
+ECDSA key fingerprint is MD5:71:a5:e3:fc:62:6e:69:cf:8a:f9:b1:e7:a5:7f:d2:c8.
+Are you sure you want to continue connecting (yes/no)? no
+Host key verification failed.
+[hadoop@hadoop03 ~]$ exit
+logout
+Connection to hadoop03 closed.
+[hadoop@hadoop01 .ssh]$ ssh hadoop04
+Last failed login: Thu Feb 13 00:35:02 KST 2020 from hadoop01 on ssh:notty
+There were 2 failed login attempts since the last successful login.
+Last login: Wed Feb 12 01:52:20 2020
+[hadoop@hadoop04 ~]$ exit
+logout
+Connection to hadoop04 closed.
+[hadoop@hadoop01 .ssh]$ ssh hadoop02
+Last login: Thu Feb 13 00:21:35 2020 from hadoop01
+[hadoop@hadoop02 ~]$ exit
+logout
+Connection to hadoop02 closed.
+[hadoop@hadoop01 .ssh]$ ssh hadoop03
+Last login: Thu Feb 13 00:36:19 2020 from hadoop01
+[hadoop@hadoop03 ~]$ exit
+logout
+Connection to hadoop03 closed.
+[hadoop@hadoop01 .ssh]$ ssh hadoop04
+Last login: Thu Feb 13 00:36:45 2020 from hadoop01
+[hadoop@hadoop04 ~]$ exit
+logout
+Connection to hadoop04 closed.
+[hadoop@hadoop01 .ssh]$ history
+```
+
+
+
+5. 각종 프로그램 설치
+
+   -SSH 프로토콜 설정
+
+   -hadoop을 테스트하기 위해서는 자바가 반드시 필요하므로 
+
+   -java, hadoop을 설치하고 설정을 한 후 테스트한다.
+
+   
+
+6. hadoop의 EchoSystem을 살펴보고 EchoSystem을 설치하여야 한다.
 
 
 
