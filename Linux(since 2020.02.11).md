@@ -180,9 +180,17 @@ VMnet8 선택 후 change settings를 선택한 후 세번째 ip만 111로 바꿔
 
 HDFS 저장소
 
-MapReduce 처리
+하둡 저장 
+
+하둡 처리 MapReduce
 
 host
+
+namenode - secondary name
+
+
+
+secondary name load 로서 hadoop02를 정의해준다.
 
 
 
@@ -396,16 +404,17 @@ initial-setup-ks.cfg  다운로드  바탕화면  사진    음악
 * 빅데이터 플랫폼을 구축하기 위한 준비작업
 
   3. 가상머신 복제하기
-     
+    
      -가상머신이 네 대 있다 가정하고 네 개의 가상머신을 만들어준다.
-   
+  
      * player 안에는 가상머신 복제기능이 없다.
    * C:\Users\student\Documents\Virtual Machines 이 안에 들어가서 hadoop1 폴더 카피한다
   
+
 ![image-20200212093955033](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212093955033.png)
+
   
-  
-  
+
   * 여기서 i move it을 누르면 원래 파일이 가지고 있던 ip를 그대로 가져오고 I copied it 을 눌러야 새로운 ip를 할당받아온다.
 
 
@@ -662,7 +671,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
   -ip확인
 
-* 4. 머신 4대를 클러스터링
+* 4. 머신 4대(CentOS)를 클러스터링
 
 -방화벽해제
 
@@ -757,8 +766,6 @@ Connection to hadoop02 closed.
 
 * 현재 hadoop 계정의 루트 폴더에 들어와 있다.
 
-
-
 * 숨김파일 보이기 체크 해제해준다.
 * 
 
@@ -768,11 +775,10 @@ remote remote
 
    -DNS 설정
 
-
-
+```bash
 [root@hadoop01 ~]# su hadoop
-[hadoop@hadoop01 root]$ cd ~
-[hadoop@hadoop01 ~]$ ssh hadoop02
+[hadoop@hadoop01 root] cd ~
+[hadoop@hadoop01 ~] ssh hadoop02
 The authenticity of host 'hadoop02 (192.168.111.131)' can't be established.
 ECDSA key fingerprint is SHA256:gWYbrhoXfz91Nnvc19vRk59IGurW/N4RJlN8J6dm1m0.
 ECDSA key fingerprint is MD5:f4:7c:e3:c6:57:17:11:1e:95:3b:7d:fd:55:e2:04:4d.
@@ -783,10 +789,10 @@ Permission denied, please try again.
 hadoop@hadoop02's password: 
 Last failed login: Thu Feb 13 00:21:31 KST 2020 from hadoop01 on ssh:notty
 There was 1 failed login attempt since the last successful login.
-[hadoop@hadoop02 ~]$ exit
+[hadoop@hadoop02 ~] exit
 logout
 Connection to hadoop02 closed.
-[hadoop@hadoop01 ~]$ ssh-keygen -t rsa
+[hadoop@hadoop01 ~] ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/hadoop/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
@@ -808,8 +814,8 @@ The key's randomart image is:
 |     .+..o.*o.   |
 +----[SHA256]-----+
 
-[hadoop@hadoop01 ~]$ cd .ssh
-[hadoop@hadoop01 .ssh]$ ls
+[hadoop@hadoop01 ~] cd .ssh
+[hadoop@hadoop01 .ssh] ls
 id_rsa  id_rsa.pub  known_hosts
 [hadoop@hadoop01 .ssh]$ ssh-copy-id -i id_rsa.pub hadoop@hadoop02
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "id_rsa.pub"
@@ -823,6 +829,11 @@ Now try logging into the machine, with:   "ssh 'hadoop@hadoop02'"
 and check to make sure that only the key(s) you wanted were added.
 
 [hadoop@hadoop01 .ssh]$
+
+
+```
+
+
 
 ssh hadoop02했을때 비밀번호를 묻지 말아야 한다.
 
@@ -863,6 +874,8 @@ Connection to hadoop04 closed.
 [hadoop@hadoop01 .ssh]$ history
 ```
 
+4. keygen
+
 
 
 5. 각종 프로그램 설치
@@ -873,11 +886,219 @@ Connection to hadoop04 closed.
 
    -java, hadoop을 설치하고 설정을 한 후 테스트한다.
 
+   * JDK 설치 및 설정
+
+   window에서 setup하는거랑 동일한 작업을 할 것이다.
+
+   https://www.oracle.com/j2se/
+
+   java.sun.com/j2se/
+
+   ​	https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
+
    
 
-6. hadoop의 EchoSystem을 살펴보고 EchoSystem을 설치하여야 한다.
+   ![image-20200213095612860](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213095612860.png)
+
+   linux-x64.rpm은 setup.exe같은 버전이고 linux-x64.tar.gz는 zip파일같은 압축 버전이다.
+
+   ```bash
+   [root@hadoop01 ~]# ls
+   anaconda-ks.cfg       jdk-8u231-linux-x64.rpm  다운로드  바탕화면  사진  음악
+   initial-setup-ks.cfg  공개                     문서      비디오    서식
+   [root@hadoop01 ~]# rpm -Uvh jdk-8u231-linux-x64.rpm 
+   ```
+
+   https://www.lesstif.com/pages/viewpage.action?pageId=7635004
+
+   ls: list 출력 명령어
+
+   -U:  --upgrade 패키지 업그레이드
+
+   -v: verbose 자세한 정보 출력
+
+   -h: print hash marks: 설치 진행 상황을 #문자를 이용하여 출력한다.
+
+   /usr/java/dk1.8.0_231-amd64에 설치되었다.
+
+   
+
+   ![image-20200213102646760](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213102646760.png) 
+
+   
+
+**지금부터 할 일
+
+-hadoop02, hadoop03, hadoop04에 jdk설치 
 
 
+
+하둡 설치파일 다운로드
+
+http://apache.org/ 
+
+사이트 접속
+
+→
+
+![image-20200213111510123](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213111510123.png)
+
+→
+
+![image-20200213111546372](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213111546372.png)
+
+→
+
+![image-20200213111636954](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213111636954.png)
+
+
+
+bin.tar.gz는 빈 파일만 들어가 있는거고 tar.gz는 소스 파일도 포함되어 있는 압축 파일이다.
+
+![image-20200213112508870](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213112508870.png)
+
+여기 소유자 계정이 hadoop인 이유는 복사할때 hadoop계정인 곳으로 복사해 주었기 때문에 이렇게 권한이 뜬다.
+
+* 압축풀기 방법
+
+* 사용방법
+
+$ tar -cvzf [압축한 파일 이름] [압축할 파일이나 폴더명]
+
+-해당 경로의 모든 파일을 xxx.tar.gz로 압축
+
+$ tar -cvzf xxx.tar.gz *
+
+-권한없는 파일 패스하며, 해당 경로의 모든 파일을  xxx.tar.gz로 압축
+
+$ tar -cvzf xxx.tar.gz  * --ignore-failed-read
+
+옵션  		설치
+
+| -c   | 새로운 tar 파일 생성                           |
+| ---- | ---------------------------------------------- |
+| -x   | 기존의 tar파일의 압축을 풀어주겠다는 의미이다. |
+| ---- | ---------------------------------------------- |
+| -v   | 명령어 실행 시 과정을 화면에 출력해준다.      |
+| ---- | ---------------------------------------------- |
+| -x   | 기존의 tar파일의 압축을 풀어주겠다는 의미이다. |
+| ---- | ---------------------------------------------- |
+| -z   | gzip사용 |
+| ---- | ---------------------------------------------- |
+| -p   | 퍼미션 포함 |
+| ---- | ---------------------------------------------- |
+| -f   | 파일의 이름을 지정 |
+
+[hadoop@hadoop01 ~]$ tar -zxvf hadoop-1.2.1.tar.gz 
+
+위 명령어로 압축 풀어준다.
+
+[hadoop@hadoop01 ~]$ scp /home/hadoop/hadoop-1.2.1.tar.gz hadoop@hadoop02:/home/hadoop/
+
+
+
+hadoop02홈에 들어가면 복사 잘 되어있는 것을 확인할 수 있다.
+
+
+
+Su hadoop
+
+[hadoop@hadoop01 ~]$ tar -zxvf hadoop-1.2.1-bin.tar.gz
+
+ssh hadoop02 "tar -zvxf hadoop-1.2.1-bin.tar.gz"
+
+ssh hadoop04 "tar -zxvf hadoop-1.2.1.tar.gz" 
+
+ .sh는 shell파일이다.
+
+
+
+mapreduce-site.xml
+jobtracker(일을 명령할(시킬) 컴퓨터의 주소)에 대한 정보이다.
+
+
+
+
+
+slave는 데이터와 테스크 로드의 경로이다.
+
+
+
+
+
+scp /home/hadoop/hadoop-1.2.1/conf/* hadoop@hadoop03:/home/hadoop/hadoop-1.2.1/conf
+
+ /home/hadoop/hadoop-1.2.1/bin/hadoop namenode -format
+
+```bash
+//conf설정을 hadoop02설정 폴더로 넘겨주는 작업
+[hadoop@hadoop01 ~]$ scp /home/hadoop/hadoop-1.2.1/conf/* hadoop@hadoop02:/home/hadoop/hadoop-1.2.1/conf
+//hadoop 초기 설정해주는 것?
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop namenode -format
+//hadoop프로그램 시작
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/start-all.sh
+//hadoop프로그램 종료
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/stop-all.sh
+//다른 하둡 서버가 잘 실행 되는지 확인
+[hadoop@hadoop01 ~]$ ssh hadoop02 "jps"
+//자기 자신이 잘 실행되는지 확인
+[hadoop@hadoop01 hadoop-1.2.1]$ jps
+54340 JobTracker
+54550 Jps
+54154 NameNode
+
+//하둡의 /input안 리스트 출력
+[hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /input
+Found 1 items
+-rw-r--r--   3 hadoop supergroup       1366 2020-02-14 00:43 /input/README.txt
+//하둡 안의 /input 폴더 삭제
+[hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -rmr /input
+Deleted hdfs://hadoop01:9000/input
+//하둡 안에 /input 폴더 생성하기
+[hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -mkdir /input
+//하둡 안 /input안에 README.txt 파일 복사하기
+[hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -copyFromLocal README.txt /input
+//args[0]
+//현재폴더 jar파일 안 wordcount클래스 검색저장할 //폴더 단어세기 from /input/README.txt to /output
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop jar hadoop-examples-1.2.1.jar wordcount /input/README.txt /output
+
+
+```
+
+
+
+![image-20200213153528389](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213153528389.png)
+
+* /input 밑에 무슨 파일이 있는지 확인할 때 사용하는 명령어
+
+/home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /input
+
+* /input 밑에 파일을 지울 때 사용하는 명령어
+
+[hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -rmr /input
+Deleted hdfs://hadoop01:9000/input
+
+* 사용이 끝난 다음에는 반드시 꺼 주어야 한다. 그렇지 않으면 읽기 전용으로 전환되어서 다시 다 설정해주어야 한다.
+
+오류를 찾을 때 namenode랑 jobtracker를 중심으로 찾는다.
+
+
+
+http://hadoop01:50070/ 여기 들어가서 확인할 것!!!
+
+이 부분의 word cloud 검색 결과이다.
+
+![image-20200214105016722](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200214105016722.png)
+
+
+
+5. hadoop의 EchoSystem을 살펴보고 EchoSystem을 설치하여야 한다.
+
+hadoop-examples-1.2.1.jar의 wordcount를 이용해서 작업하기
+-HDFS에 myinput폴더를 작성한다.
+-LICENSE.txt를 복사한다.
+-wordcount를 적용
+-출력결과는 myoutput으로 작성할 것
 
 
 
