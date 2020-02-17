@@ -977,17 +977,13 @@ $ tar -cvzf xxx.tar.gz  * --ignore-failed-read
 
 | -c   | 새로운 tar 파일 생성                           |
 | ---- | ---------------------------------------------- |
+| -x   | 기존의 tar파일의 압축을 풀어주겠다는 의미이다  |
+| -v   | 명령어 실행 시 과정을 화면에 출력해준다.       |
 | -x   | 기존의 tar파일의 압축을 풀어주겠다는 의미이다. |
-| ---- | ---------------------------------------------- |
-| -v   | 명령어 실행 시 과정을 화면에 출력해준다.      |
-| ---- | ---------------------------------------------- |
-| -x   | 기존의 tar파일의 압축을 풀어주겠다는 의미이다. |
-| ---- | ---------------------------------------------- |
-| -z   | gzip사용 |
-| ---- | ---------------------------------------------- |
-| -p   | 퍼미션 포함 |
-| ---- | ---------------------------------------------- |
-| -f   | 파일의 이름을 지정 |
+| -z   | gzip사용                                       |
+| -p   | 퍼미션 포함                                    |
+| -f   | 파일의 이름을 지정                             |
+| -z   | gzip사용                                       |
 
 [hadoop@hadoop01 ~]$ tar -zxvf hadoop-1.2.1.tar.gz 
 
@@ -1099,6 +1095,182 @@ hadoop-examples-1.2.1.jar의 wordcount를 이용해서 작업하기
 -LICENSE.txt를 복사한다.
 -wordcount를 적용
 -출력결과는 myoutput으로 작성할 것
+
+
+
+* ip 바뀌었을 때
+  * /etc/hosts
+  * scp 모든 머신에 copy
+  * 네트워크 프로세스 restart
+
+* 빅데이터의 5대 요소(5V)
+
+크기, 속도, 다양성, 정확성(가치), (정확한)값
+
+volume, velocity, variety, veracity, value
+
+sns 활동내역을 보고 harvard 입학 취소한 사례
+
+=> 신중하게 sns를 사용할 것
+
+빅데이터 뿐만 아니라 정형화 된 데이터는 정형화 된 채로 또 필요하다
+
+
+
+
+
+
+
+포트폴리오 오늘 제출(금요일까지 업데이트해서 강사님한테 제출)
+
+1,2번 어떤것을 기술했는지
+
+3,4,번은 받은 데이터를 활용해서 어떻게 작업을 했었는지 기술해 줄 것
+
+전체 프로젝트의 테이블 구성
+
+나의 개발 부분
+
+시스템 구조 그림 형식으로 설계
+
+시스템 구축은 어떻게 어떻게 해서 설계했다.
+
+maven 구성 mybatis 어떻게 연동
+
+
+
+* 데이터 수집, 
+
+IoT, 정형데이터, (RDBMS) - sqoop, (로그데이터(log)) - flume, (SNS, 웹페이지, 크롤링) - R
+
+* 데이터 저장
+
+HDFS, no-SQL
+
+* 데이터 처리, 
+
+데이터의 처리, MapReduce → R
+
+* 데이터 분석, 
+
+감정분석, 자연어처리, 키워드 분석, 패턴 분석, 데이터마이닝
+
+ex) Text Mining, NLP, Real-time analysis, Batch analysis, Scalability
+
+* 분석 결과 활용
+
+시각화, 특정 기능의 Input데이터로 활용
+
+ex) MongoDB
+
+각종 chart라이브러리 D3
+
+
+
+전자정부framework는 개발하는데 필요한 요소들을 하나의 패키지로 묶어놓은 것들이다.
+
+아마존 AWS Microsoft Azure 
+
+* 분석(이게 빅데이터의 기본 값)
+  * HDFS에 저장
+* RDBMS분석
+
+UTF-8로 변경
+
+tern 설치
+
+블로그 install설치 데이터 툴 설치
+
+글꼴수정
+
+
+
+* HDFS에 적재하는 방법
+
+
+
+[root@hadoop01 hadoop-1.2.1]# cd ..
+[root@hadoop01 hadoop]# echo $LANG
+ko_KR.UTF-8
+
+[root@hadoop01 hadoop]# su hadoop
+
+[hadoop@hadoop01 ~]$ cd hadoop-1.2.1/ 
+[hadoop@hadoop01 hadoop-1.2.1]$ pwd
+/home/hadoop/hadoop-1.2.1
+[hadoop@hadoop01 hadoop-1.2.1]$ ls
+
+[hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -copyFromLocal NOTICE.txt /input
+
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop jar hadoop-examples-1.2.1.jar wordcount /input/NOTICE.txt /wordcount_output
+
+
+
+* 하둡 stswork에서 할 일(정신 똑바로 차릴 것!!!!)
+
+하둡은 그냥 자바프로젝트에서 작업한다.
+
+new → java project
+
+![image-20200217134041388](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217134041388.png)
+
+저렇게 프로젝트 생성하고 no를 눌러 끝내준다.
+
+
+
+![image-20200217134201771](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217134201771.png)
+
+저런 경로를 따라서 가줄 것
+
+그다음 buildpath addlibraries
+
+
+
+![image-20200217141603035](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217141603035.png)
+
+이 파일을 ant라고 부른다.
+
+무언가 변경될 때마다 build.xml을 실행시켜 주어야 한다.
+
+![image-20200217145412766](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217145412766.png)
+
+여기 이 파일을 
+
+![image-20200217145447484](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217145447484.png)
+
+여기로 옮겨줄 것!!!
+
+[hadoop@hadoop01]$ ./hadoop-1.2.1/bin/hadoop jar multi-hadoop-examples.jar hdfs.exam.HDFSExam01 output.txt. hellohadoop
+
+
+
+파일이 변경되면 build.xml부터 실행해준다.
+
+[hadoop@hadoop01]$ ./hadoop-1.2.1/bin/hadoop jar multi-hadoop-examples.jar hdfs.exam.HDFSTest02 output.txt. 
+
+hdfs에서 읽은 데이터: hellohadoop
+
+build.xml이 필요한 설정 파일을 .jar로 묶어준다.
+
+
+
+[hadoop@hadoop01]$ ./hadoop-1.2.1/bin/hadoop jar multi-hadoop-examples.jar hdfs.exam.HDFSTest02 /user/hadoop/output.txt. output1.txt 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
