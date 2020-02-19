@@ -1196,7 +1196,10 @@ ko_KR.UTF-8
 [root@hadoop01 hadoop]# su hadoop
 
 [hadoop@hadoop01 ~]$ cd hadoop-1.2.1/ 
-[hadoop@hadoop01 hadoop-1.2.1]$ pwd
+[hadoop@hadoop01 hadoop-1.2.1]$ pwd (print working directory)
+
+전체 경로를 보여달라는 명령어
+
 /home/hadoop/hadoop-1.2.1
 [hadoop@hadoop01 hadoop-1.2.1]$ ls
 
@@ -1256,6 +1259,209 @@ build.xml이 필요한 설정 파일을 .jar로 묶어준다.
 
 [hadoop@hadoop01]$ ./hadoop-1.2.1/bin/hadoop jar multi-hadoop-examples.jar hdfs.exam.HDFSTest02 /user/hadoop/output.txt. output1.txt 
 
+#### 하둡의 목적
+
+빅데이터를 저장하고 처리하는 목적이 있다.
+
+* 처리방법: 맵리듀스(Map Reduce)
+
+* 처리방법: HDFS이용(하둡이 가지고 있는 분산 파일 시스템)
+
+HDFS
+
+* hadoop fs -mkdir /input
+
+* hadoop01:50070 페이지가 xwindow상에서 볼 수 있도록 만들어준 admin page이다.
+
+* hadoop fs -copyFromLocal README.txt /input
+
+input 폴더 안에 README.txt를 복사해서 넣어주는 명령어
+
+프로그램 → 시스템 도구 →  설정 →  전원 →  절전 → 빈 화면 →  안함 으로 설정 해준다.
+
+cd ~ 홈 디렉토리로 이동
+
+cd / root 디렉토리로 이동(최상위 폴더)
+
+pwd 현재 들어간 위치의 경로를 보여준다. 
+
+linux상에서 shell script 파일들은 다 열어볼 수 있다.
+
+
+
+/home/hadoop/hadoop-1.2.1/bin/start-all.sh
+
+path(경로)를 걸어두지 않았기 때문에 내가 실행시키고 싶은 shell script 파일이 들어있는 전체 경로를 다 적어주어야 한다.
+
+
+
+/home/hadoop/hadoop-1.2.1/bin/hadoop []
+
+[]안에 들어갈 옵션
+
+fs: hdfs안의 명령어를 묶어놓은 곳(분산 파일 시스템에 관한
+
+jar: java파일 실행
+
+
+
+./bin/hadoop jar ./hadoop-examples-1.2.1.jar wordcount
+
+
+
+뒤에 명령행 매개변수가 있으면 적어주면 된다.
+
+
+
+![image-20200219103540224](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219103540224.png)
+
+여기중 mapred(mapreduce)이고
+
+dfs는 안에 data랑 namesecondary로서 secondarynamenode에 관한 폴더가 들어있다.
+
+![image-20200219103853594](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219103853594.png)
+
+여기 data 폴더는 datanode에 관한 정보들이 들어있다.
+
+![image-20200219104009331](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219104009331.png)
+
+여기는 폴더안에 .meta파일에 대한 정보도 제공해준다.
+
+* 문제가 발생했을 때
+
+하둡머신 1,2,3,4 돌면서
+
+![image-20200219104225582](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219104225582.png)
+
+
+
+이 그림 안에 있는 폴더를 삭제해준다.
+
+![image-20200219111442501](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219111442501.png)
+
+이렇게 해서 Quick Type Hierarchy로 들어간 다음에 설정을 해준다.
+
+![image-20200219111219687](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219111219687.png)
+
+
+
+![image-20200219112259079](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219112259079.png)
+
+
+
+```bash
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop fs -rmr /input
+Deleted hdfs://hadoop01:9000/input
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop fs -rmr /out
+Deleted hdfs://hadoop01:9000/out
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop fs -rmr /wordcount_output
+Deleted hdfs://hadoop01:9000/wordcount_output
+//mapreduce 상에 필요없는 폴더들을 지워준다.
+
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop jar ../multi-hadoop-examples.jar hdfs.exam.HDFSCopyTest /user/hadoop/output.txt /copytest
+//명령어를 root위치에 파일로 만들어진 부분에 해 둘 것이다
+
+```
+
+
+
+
+
+![image-20200219135207783](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219135207783.png)
+
+d는 폴더 - 은 파일을 의미한다. 그리고 rwx는 소유권한을 의미한다.
+
+
+
+[root@exam ~]# cd mytest cd하고 mytest만 넣으면 뒤에 /가 자동으로 붙는다.
+
+
+
+cp 로컬에서 파일 복사할 때 scp는 원격지로 파일 복사할 때 사용한다.
+
+
+
+
+
+mytest1
+
+​	+
+
+​	|________________mytest2
+
+​							+
+
+​							|_________________mytest3
+
+이렇게 만드는 방법
+
+[root@exam mytest]# mkdir -p mytest1/mytest2/mytest3
+
+
+
+[root@exam mytest]# rmdir mytest1
+[root@exam mytest]# rm mytest1
+rm: cannot remove `mytest1': 디렉터리입니다
+[root@exam mytest]# rm -r mytest1
+rm: descend into directory `mytest1'? y
+rm: descend into directory `mytest1/mytest2'? y
+rm: remove 디렉토리 `mytest1/mytest2/mytest3'? y
+rm: remove 디렉토리 `mytest1/mytest2'? y
+rm: remove 디렉토리 `mytest1'? y
+[root@exam mytest]# rm -rf test
+[root@exam mytest]# cd ~
+
+root 홈디렉토리 hadooptest폴더 생성 후
+
+cd 명령어를 이용하여 hadooptest로 이동한다.
+
+-/etc/sysconfig폴더 copy하기
+
+-/root/의 anaconda-ks.cfg파일 복사하기
+
+-복사한 후 my_conda.cfg로 rename
+
+-아래의 구조를 갖고 있는 서브 디렉토리 생성하기
+
+mytest1
+
+​	+
+
+​	| ---------/etc/hosts 파일 복사
+
+​	|________________mytest2
+
+​							+
+
+​							|_________________mytest3
+
+-여기까지 캡쳐하기
+
+-mytest2폴더 삭제하기
+
+-캡쳐하기
+
+-작업 완료 후 캡쳐된 파일 2개 메일로 전송하기
+
+more my_conda.cfg
+
+space는 다음 B는 앞 페이지로 이동한다.
+
+
+
+![image-20200219152732656](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219152732656.png)
+
+
+
+#### 맵 리듀스(mapreduce) 
+
+맵리듀스는 데이터를 분류하고 처리해주는 작업을 해준다.
+
+mapper는 카테고리 분야별로 데이터를 나눠 처리해준다. 
+
+
+
+#### 접속은 root로, 하둡 실행은 hadoop 계정으로
 
 
 
@@ -1263,52 +1469,7 @@ build.xml이 필요한 설정 파일을 .jar로 묶어준다.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
+#### 맵퍼 설정하기
 
 
 
