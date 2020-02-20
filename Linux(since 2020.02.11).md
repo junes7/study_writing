@@ -1069,6 +1069,8 @@ Deleted hdfs://hadoop01:9000/input
 
 /home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /input
 
+아니면 50070 접속해서 확인한다.
+
 * /input 밑에 파일을 지울 때 사용하는 명령어
 
 [hadoop@hadoop01 hadoop-1.2.1]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -rmr /input
@@ -1459,6 +1461,10 @@ space는 다음 B는 앞 페이지로 이동한다.
 
 mapper는 카테고리 분야별로 데이터를 나눠 처리해준다. 
 
+job은 맵과 리듀스를 처리해주는 역할 -> Driver에 구현해 주었다.
+
+
+
 
 
 #### 접속은 root로, 하둡 실행은 hadoop 계정으로
@@ -1477,13 +1483,73 @@ mapper는 카테고리 분야별로 데이터를 나눠 처리해준다.
 
 
 
+![image-20200219174959549](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219174959549.png)
+
+
+
+어느 분야를 가든지 spring framework는 중요하다.
+
+프로세스가 떠있는 상황이면 점유되어 있는 상황이다.
+
+
+
+하둡 서버상에서 문제가 생겼을 때 어떻게 해결을 해야 하는지를 알고 있어야 한다.
+
+
+
+Tomcat Access log가 실행이 된다.
+
+```bash
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop fs -mkdir /input
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop fs -put README.txt /input/
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop fs -ls /input/
+//하둡 안에서 파일 시스템으로 값을 집어넣는 방법
+
+[hadoop@hadoop01 hadoop-1.2.1]$ ./bin/hadoop jar hadoop-examples-1.2.1.jar wordcount /input/README.txt /output
 
 
 
 
 
+```
 
 
+
+hdfs를 관리하는 admin(관리자) 페이지
+
+
+
+job을 관리하는 admin(관리자) 페이지
+
+
+
+map이 끝나면 shuffle단계고, 이 작업이 끝나면 reduce 단계이다.
+
+
+
+=>  mapred.basic과 동일한 작업을 수행한다.
+
+5글자  이상인 문자열만 빈도수 구하기
+
+=> /input/README.txt파일을 이용
+
+=>output
+
+/mywork/wordcount_exam
+
+ 
+
+
+
+해쉬맵에 날짜 집어넣고 +1 해서 데이터 집어넣으면 오랜 시간이 걸린다.
+
+hdfs의 /input에 저장하기
+
+/mywork/nasdaq
+
+
+
+.csv파일은 String[] temp = value.toString().split(","); 이렇게 써 주어야 한다.-ㅡ
 
 
 
