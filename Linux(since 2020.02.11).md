@@ -1551,11 +1551,29 @@ hdfs의 /input에 저장하기
 
 .csv파일은 String[] temp = value.toString().split(","); 이렇게 써 주어야 한다.-ㅡ
 
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -put /home/hadoop/hadoop-1.2.1/1987.csv /input_data
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /
+bin/   boot/  dev/   etc/   home/  lib/   lib64/ media/ mnt/   opt/   proc/  root/  run/   sbin/  srv/   sys/   tmp/   usr/   var/
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /input_data
+Found 1 items
+-rw-r--r--   3 hadoop supergroup  127162942 2020-02-20 16:47 /input_data/1987.csv
 
 
 
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -put /home/hadoop/hadoop-1.2.1/1987.csv /input_data
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /
+bin/   boot/  dev/   etc/   home/  lib/   lib64/ media/ mnt/   opt/   proc/  root/  run/   sbin/  srv/   sys/   tmp/   usr/   var/
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop fs -ls /input_data
+Found 1 items
+-rw-r--r--   3 hadoop supergroup  127162942 2020-02-20 16:47 /input_data/1987.csv
 
 
+
+[hadoop@hadoop01 ~]$ /home/hadoop/hadoop-1.2.1/bin/hadoop jar hadoop-mapred-examples.jar mapred.exam.air.AirDriver /input_data/1987.csv /mywork/air_result_1
+
+
+
+#### #{title} 의미 '?' 의미로서 title변수의 값을 넘겨준다는 의미이다.
 
 
 
