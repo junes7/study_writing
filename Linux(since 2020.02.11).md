@@ -1579,3 +1579,228 @@ Found 1 items
 
  
 
+root에서 hadoop 머신을 시작했을 때
+
+![image-20200224093212580](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224093212580.png)
+
+저기 밑줄 친 hadoop-data를 날리고 reboot하고 namenode 초기화한다.
+
+
+
+![image-20200224100705740](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224100705740.png)
+
+![image-20200224101033393](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224101033393.png)
+
+
+
+![image-20200224101914795](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224101914795.png)
+
+이 상태로 되어있으면 외부에서 hadoop01이란 hostname을 인식할 수 없기 때문에 이 호스트이름을 IP로 바꿔준다.
+
+![image-20200224102101662](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224102101662.png)
+
+그러면 위와 같이 설정이 변경된다. core-site.xml뿐만 아니라. hdfs-site.xml,  mapred-site.xml도 변경해준다.
+
+![image-20200224102327714](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224102327714.png)
+
+![image-20200224102509693](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224102509693.png)
+
+value에 /로 설정해 놓았다는 의미는 최상위 폴더로서 그 하위의 파일들을 다 매맵핑해서 볼 수 있다는 의미이다.
+
+그리고 sts에서 new → java proejct를 통해 advancedMapReduce 이름으로 생성해준다. 그리고 mapred.exam.air 패키지를 복사한 다음 configure build path로 가서 라이브러리 두 개를 추가해준다. 그래야 엑스박스가 없어진다.
+
+![image-20200224103458983](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224103458983.png)
+
+여기는 외부 라이브러리들이 대부분이다. 대부분이 실행과 관련된 라이브러리들이다.
+
+
+
+![image-20200224103904268](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224103904268.png)
+
+여기 그림처럼 hadoop-1.2.1밑의 lib폴더와 conf 폴더에서 파일들을 복사해서 위와 같이 복사해준다.
+
+그러나 이 상태에서는 자바 lib는 add jar에서 추가해서 설정해주고 , conf는 add class folder에서 설정해준다.
+
+이래야 java project에서 인식이 된다.
+
+![image-20200224104201079](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104201079.png)
+
+그다음에 apply and close하면 다음과 같이 느낌표가 뜬다.
+
+![image-20200224104335394](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104335394.png)
+
+이 에러는 읽을 수 없는 파일들이 있다는 의미이다. 그래서 아래의 buildpath 경로로 가서 그 파일들을 제거해 주면 아래와 같이 느낌표가 없어진다.
+
+![image-20200224104600891](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104600891.png)
+
+여기 아래처럼 AirDriver를 실행시켰을 때 위와 같이 ArrayIndexOut of BoundsException에러가 뜨는데 이때 코드 창에서 오른쪽 클릭하고 run as → run configuration 들어가서 Arguments탭에 들어가서 ${string_prompt} 를 설정해주고 apply → run 해준다.
+
+![image-20200224104813046](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104813046.png)
+
+그러면 아래와 같이 Variable Input 창이 뜨는데 거기서 아래와 같이 입력해주고 실행해주면 
+
+![image-20200224104936053](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104936053.png)
+
+아래와 같이 에러가 발생한다.
+
+![image-20200224105254339](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224105254339.png)
+
+이 에러는 기본적으로 hadoop은 외부에서 읽을수는 있지만 작성할 수 있는 권한이 없기 때문에 이런 에러가 뜬다.
+
+먼저 하둡 머신 동작을 stop해준다.
+
+![image-20200224111151354](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224111151354.png)
+
+이 에러를 해결 하기 위해 위와 같이 dfs.permission 프로퍼티를 추가해주고 설정을 false로 해준다. 즉 저 설명 의미가 퍼미션에 관한 모든 설정을 해제하겠다는 의미이다.
+
+그리고 설정파일 복사해서 scp 명령어 통해서 각 머신으로 복사해주고 하둡 실행해준다.
+
+![image-20200224112721536](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224112721536.png)
+
+그리고 1로 시작하는 모든 파일을 읽어서 실행하고 /mywork밑에 air_eclipse 폴더에 파일을 생성하라는 의미이다.
+
+그러나 loadclass 에러가 뜬다. 이 에러의 의미는 .class 파일을 .jar로 안 묶어주었기 때문에 발생하는 에러이다.
+
+그래서 아래와 같이 jar 파일을 묶어준다.
+
+
+
+![image-20200224112609522](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224112609522.png)
+
+
+
+
+
+![image-20200224113104366](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224113104366.png)
+
+이렇게 빌디 패스를 추가해주고 실행해준다.
+
+
+
+![image-20200224113902733](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224113902733.png)
+
+그러나 여기 결과 데이터를 살펴보면 1987년과 1988년 결과가 합쳐져서 나온다. 그러므로 구분을 해주기 위해 mapper에서 년도도 output key로 설정해준다.
+
+![image-20200224114301804](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224114301804.png)
+
+그 다음 변경 사항 적용 위해서 mapred-exam.jar를 삭제하고 다시 jar export해서 그 파일을 추가하고 실행해준다.
+
+![image-20200224114501379](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224114501379.png)
+
+그럼 위와 같이 분류되어서 결과가 나온다.
+
+
+
+※ HDFS 쓰기 동작 방식
+
+1단계. Client는 Namenode에서 파일이 저장될 데이터 노드의 위치 정보를 전달 받는다.
+
+2단계. Client는 해당 데이터 노드에 데이터를 저장한다.
+
+3단계. 저장된 데이터는 블록 단위로 복제한다. 여기서 복제되는 데이터 노드들을 파이프라인이라고 하는데, 서로 복제할 데이터 노드들을 사전에 네임노드에서 미리 정해 놓고 진행된다.
+
+※ HDFS쓰기와 복제
+
+1단계. 사전에 미리 확인된 데이터 노드에 서로 복제를 진행한다.
+
+2단계. 복제가 완료되면 각 데이터 노드는 서로에게 완료 신호를 전송하고 최종 완료 신호는 client에게 전달된다. 
+
+3단계. Client는 Namenode에게 완료 신호를 보냄으로써 파일 쓰기가 완료된다.
+
+여기서, 각 데이터 노드들은 NameNode에게 별도의 블록 리포트를 제출한다.
+
+※ 세컨더리 네임노드의 역할
+
+어떤 서버 서비스의 가용성을 유지하기 위해서 main namenode 서버가 죽었을 때 secondary namenode가 main namenode 역할을 해 주기 위해서 존재한다.
+
+1.  Active-Standby가 아니다.
+2. NN(NameNode) 운영에 필요한 EditLog와 FsImage 파일의 백업 지원
+3. 체크 포인트 호출 시에 동작
+4. 세컨더리 네임노드의 백업 파일은 시스템 재 부팅에 호출
+
+### pattern
+
+* 파일을 
+
+![image-20200224134613378](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224134613378.png)
+
+
+
+* 패턴분석
+
+^[a-zA-Z]*$
+
+a-z까지 그리고 A-Z까지 즉, 알파벳은 모두 허용
+
+*글자 수 상관하지 않음
+
+→알파벳이기만 하면 패턴에 맞다
+
+| 표현식 | 설명                                                         |
+| ------ | ------------------------------------------------------------ |
+| ^      | 문자열의 시작                                                |
+| $      | 문자열의 종료                                                |
+| .      | 임의의 한 문자(문자의 종류 가리지 않음)   단, \는 넣을 수 없음 |
+| *      | 앞 문자가 없을 수도 무한정 많을 수 도 있음                   |
+| +      | 앞 문자가 하나 이상                                          |
+| ?      | 앞 문자가 없거나 하나 있음                                   |
+| []     | 문자의 집합이나 범위를 나타내며 두 문자 사이는 - 기호로 범위를 나타낸다. []내에서 ^가 선행하여 존재하면 not을 나타낸다 |
+| {}     | 횟수 또는 범위를 나타낸다                                    |
+| ()     | 소괄호 안의 문자를 하나의 문자로 인식                        |
+| \|     | 패턴 안에서 or 연산을 수행할 때 사용                         |
+| \s     | 공백 문자                                                    |
+| \S     | 공백 문자가 아닌 나머지 문자                                 |
+| \w     | 알파벳이나 숫자                                              |
+| \W     | 알파벳이나 숫자를 제외한 문자                                |
+| \d     | 숫자[0-9]와 동일                                             |
+| \D     | 숫자를 제외한 모든 문자                                      |
+| \      | 정규표현식 역슬래시는 확장 문자 \| 역슬래시 다음에 일반 문자가 오면 특수문자로 취급하고 역슬래시 다음에 특수문자가 오면 그 문자 자체를 의미한다 |
+| (?i)   | 앞 부분에 (?i)라는 옵션을 넣어주면 대소문자로 구분하지 않는다 |
+|        |                                                              |
+
+
+
+IpCheck -> ip타입으로 적절한지 체크
+
+Password 체크
+
+-> 8글자 이상, 대문자, 소문자, 특수문자, 숫자가 모두 포함
+
+pattern연습하면서 작업했던 코드 rename
+
+access log 파일 copy해서 그 중에서 id 뽑아내는 것만 해볼 것
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
