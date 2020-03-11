@@ -108,7 +108,65 @@ Combiner 사용한 후
 
 
 
+키의 개수만큼 reducer가 호출된다.
 
+
+
+### RPC(Remote Procedure Call) 개념
+
+상호 미리 정의된 규격을 준수하여 원격에서 동작하고 있는 프로세스에 포함된 함수를 호출 가능하게 하는 프로세스 간 통신 기술이다.
+
+일반적인 프로세스는 자신의 주소공간에서 존재하는 함수를 호출하여 실행가능하지만, RPC를 이용하면 다른 주소공간에서 동작하는 프로세스 함수를 실행할 수 있게 된다.
+
+분산 컴퓨팅 환경에서 프로세스 간 상호 통신 및 컴퓨팅 자원의 효율적인 사용을 위하여 발전된 기술이다.
+
+
+
+![image-20200311102600841](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311102600841.png)
+
+https://leejonggun.tistory.com/9
+
+
+
+상품이 몇 번 집계되었는지 보는 것
+
+ID별로 몇 번 클릭되었는지
+
+첫 번째꺼가 상품번호
+
+두 번째꺼가 접속한 ID
+
+세 번째꺼가 그 ID가 클릭한 횟수
+
+
+
+어떤것이 첫 번째걸로 묶이는지 본다
+
+![image-20200311105243047](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311105243047.png)
+
+
+
+![image-20200311105401568](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311105401568.png)
+
+내부에서 키 값이 계속 변하고 있다
+
+보조정렬을 사용해 작업할 것
+
+
+
+
+
+![image-20200311162528417](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311162528417.png)
+
+이파일 링크 복사한 다음에 다운로드 할 것
+
+wget 복사한 링크 웹사이트
+
+
+
+classNotFoundException 에러가 뜨면 jar파일을 export해서 추가해 주어야 한다.
+
+그리고 수정사항이 생기면 생길때마다 jar파일 생성해 export해서 추가해 주어야 한다.
 
 
 
