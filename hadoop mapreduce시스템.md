@@ -162,11 +162,112 @@ ID별로 몇 번 클릭되었는지
 
 wget 복사한 링크 웹사이트
 
-
+wget http://archive.apache.org/dist/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz
 
 classNotFoundException 에러가 뜨면 jar파일을 export해서 추가해 주어야 한다.
 
 그리고 수정사항이 생기면 생길때마다 jar파일 생성해 export해서 추가해 주어야 한다.
+
+
+
+![image-20200312092825808](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312092825808.png)
+
+
+
+
+
+![image-20200312095406003](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312095406003.png)
+
+이렇게 스쿱 압축파일을 풀어준다.
+
+
+
+![image-20200312104321119](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104321119.png)
+
+숨김파일 보이기 설정할 것
+
+
+
+
+
+![image-20200312104537219](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104537219.png)
+
+profile은 리눅스 계정으로 접속해 실행하면 보이는 파일이다.
+
+
+
+
+
+![image-20200312104826884](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104826884.png)
+
+위 파일이나
+
+![image-20200312104902787](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104902787.png)
+
+아래 파일들은 잘못 수정해주면 커널 실행이 안 된다. 
+
+그러므로 조심해 주어야 한다.
+
+![image-20200312105319898](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312105319898.png)
+
+
+
+![image-20200312110850229](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312110850229.png)
+
+
+
+어디에서든지 사용하려면 라이브러리.jar 파일이 있어야 한다.
+
+![image-20200312113206024](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312113206024.png)
+
+
+
+![image-20200312114254048](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312114254048.png)
+
+
+
+
+
+![image-20200312114853714](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312114853714.png)
+
+
+
+이렇게 실행해서 하둡 실행결과를 오라클 테이블에 넣고 오라클에 가서 확인해본다.
+
+
+
+
+
+
+
+```sql
+SQL> select * from pro_comment where pro_comment is null;
+
+PRD_NO                                   MEM_ID                                   PR
+---------------------------------------- ---------------------------------------- --
+PRD000000016                             lee
+
+SQL> delete from pro_comment where pro_comment is null;
+
+1 row deleted.
+
+SQL> commit;
+
+Commit complete.
+null 값으로 잘못 등록된 데이터를 이렇게 지워준다.
+```
+
+
+
+댓글을 직접 달것
+
+2번은 안 해도 된다.
+
+스텝3은 patternTest를 참고할 것
+
+
+
+
 
 
 
