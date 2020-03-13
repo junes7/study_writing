@@ -267,6 +267,329 @@ null 값으로 잘못 등록된 데이터를 이렇게 지워준다.
 
 
 
+빅데이터 면접질문
+
+
+
+페이지뷰 분석
+
+방문자수 분석
+
+순 방문자수 분석
+
+신규 방문자 수
+
+자유 형식으로 어떻게 분석해야 되는지
+
+#### Sqoop을 써서 export 하는 방법 
+
+```sql
+SQL> create table wordcount(
+  2  word varchar2(30),
+  3  hit varchar2(30));
+
+Table created.
+```
+
+
+
+
+
+```bash
+sqoop export -connect jdbc:oracle:thin:@70.12.115.59:1521:xe \
+> -username shop -password shop \
+> -table wordcount -export-dir /wordcount/part-r-00000 \
+> -columns "word,hit"
+```
+
+이러면 아래와 같은 에러가 발생한다.
+
+![image-20200313095533817](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313095533817.png)
+
+
+
+
+
+```bash
+sqoop export -connect jdbc:oracle:thin:@70.12.115.59:1521:xe \
+-username shop -password shop \
+-table wordcount -export-dir /wordcount/part-r-00000 \
+-columns "word,hit" -fields-terminated-by \\t
+
+```
+
+그 에러를 해결하기 위해서 위와 같이 -fields-terminated-by \\t 를 추가해준다.
+
+Apache Flume 데이터 수집 프로그램
+
+![image-20200313101251491](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313101251491.png)
+
+위 그림에서 네모 부분이 Agent이다.
+
+source는 내가 내부에서 담고 있는 부분이다.
+
+일반적인 구성형태이다.
+
+
+
+![image-20200313102248304](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313102248304.png)
+
+
+
+
+
+spark 공부할 때에는 kafka도 같이 공부해야 한다.
+
+
+
+Sink는 output을 담당하는 객체이다.
+
+Hive로 내보낼 수도 있다.
+
+Thrift도 될 수 있고 nosql이다.
+
+ElasticSearchSink는 기업에서 많이 쓰는 객체이다.
+
+
+
+FlumeChannel은 전송하기 위하여 쌓아놓았다가 내보낼 때 사용하는 채널이다.
+
+종류로 JDBC, KAFKA 등이 있다.
+
+
+
+밖에서는 Documentation만 보도록 한다.
+
+hadoop01, 02에서 Apache Flume를 설치하여 사용한다.
+
+
+
+![image-20200313103712345](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313103712345.png)
+
+이 빨간 줄 버전을 wget으로 다운받는다.
+
+
+
+
+
+```bash
+[hadoop@hadoop01 hadoop-1.2.1]$ wget http://archive.apache.org/dist/flume/1.6.0/apache-flume-1.6.0-bin.tar.gz
+--2020-03-13 19:36:42--  http://archive.apache.org/dist/flume/1.6.0/apache-flume-1.6.0-bin.tar.gz
+Resolving archive.apache.org (archive.apache.org)... 163.172.17.199
+Connecting to archive.apache.org (archive.apache.org)|163.172.17.199|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 52550402 (50M) [application/x-gzip]
+Saving to: ‘apache-flume-1.6.0-bin.tar.gz’
+
+100%[==================================================================================================>] 52,550,402  6.66MB/s   in 11s    
+
+2020-03-13 19:36:53 (4.59 MB/s) - ‘apache-flume-1.6.0-bin.tar.gz’ saved [52550402/52550402]
+
+[hadoop@hadoop01 hadoop-1.2.1]$ cd ~
+[hadoop@hadoop01 ~]$ pwd
+/home/hadoop
+[hadoop@hadoop01 ~]$ ls
+access_log.txt                 hadoop-1.2.1         hadoop-mapred-examples.jar  sqoop-1.4.6.bin__hadoop-1.0.0         tb_product.java
+apache-flume-1.6.0-bin.tar.gz  hadoop-1.2.1.tar.gz  inputdata.txt               sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz  test
+carriers.csv                   hadoop-data          multi-hadoop-examples.jar   sqoop_result.java
+[hadoop@hadoop01 ~]$ tar -zxvf apache-flume-1.6.0-bin.tar.gz 
+```
+
+#### Flume 설정하는 방법
+
+→ 데이터를 추출하기 위해 사용되는 프로그램
+
+시스템로그, 웹 서버의 로그, 클릭로그, 보안로그..비정형데이터를
+
+HDFS에 적재하기 위해 사용하는 프로그램
+
+대규모의 로그데이터가 발생하면 효율적으로 수집하고 저장하기 위해
+
+관리해주는 프로그램이 필요하다/
+
+→flume, chukwa, scribe, fluentd, splunk(보안쪽에서 많이 사용)
+
+※ 빅데이터 프로그램 안에 내장되어 있는 로그 프로그램이 대부분 flume이기에 Apache Flume 프로그램을 사용해본다.
+
+[설정방법]
+
+1. 다운로드
+2. .bashrc에다가 설정정보 등록하는 작업을 해 주어야 한다.
+
+flume-env.sh.template이러면 파일을 인식 못한다.
+
+Flume은 자바 베이스이다.
+
+3. flume-env.sh rename하고 정보등록
+
+   -jdk홈디렉토리
+
+   -hadoop홈디렉토리
+
+4. flume 설정 파일에 등록
+
+-flume-conf.properties.template를 rename해서 XXXX.properties
+
+-flume-agent의 source,channel,sink에 대한 정보를 등록해준다.
+
+```bash
+[hadoop@hadoop01 ~]$ source .bashrc 
+[hadoop@hadoop01 ~]$ cd apache-flume-1.6.0-bin/conf/
+[hadoop@hadoop01 conf]$ ls
+flume-conf.properties.template  flume-env.ps1.template  flume-env.sh.template  log4j.properties
+[hadoop@hadoop01 conf]$ cp flume-env.sh.template flume-env.sh
+[hadoop@hadoop01 conf]$ ls
+flume-conf.properties.template  flume-env.ps1.template  flume-env.sh  flume-env.sh.template  log4j.properties
+[hadoop@hadoop01 conf]$ cp flume-conf.properties.template console.properties
+
+
+```
+
+3.
+
+![image-20200313111205537](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313111205537.png)
+
+
+
+[Flume의 구성요소]
+
+flume의 실행 중인 프로세스를 agent라 부르며,  source, channel, sink로 구성
+
+1. source
+
+=> 데이터가 유입되는 지정(어떤 방식으로 데이터가 유입되는지 type으로 명시)
+
+agent명.sources.source명.type=값
+
+1) type
+
+​	-netcat: telnet을 통해서 터미널로 들어오는 입력데이터
+
+​				(bind: 접속IP, port:접속할 port)
+
+​	-spoolDir: 특정 폴더에 저장된 파일
+
+​				(spoolDir: 폴더명)
+
+2. channel
+
+=> 데이터를 보관하는 곳(source와 sink사이의 Queue)
+
+3. sink
+
+=> 데이터를 내보내는 곳(어떤 방식으로 내보낼지를 정의한다.)
+
+​	1) type
+
+​		-logger: flume서버 콘솔에 출력이 전달
+
+​		flume을 실행할 때 -Dflume.root.logger=INFO,console을 추가
+
+​	   -file_roll: file을 읽어서 가져오는 경우
+
+​				(directory: 읽어온 파일을 저장할 output폴더를 명시)
+
+consolidation 통합, 정리
+
+
+
+[Flume의 실행방법]
+
+```bash
+apache-flume-1.6.0-bin]$ ./bin/flume-ng agent 
+--conf conf --conf-file ./conf/console.properties 
+--name myConsole -Dflume.root.logger=INFO,console
+
+실행명령어: ./bin/flume-ng agent
+옵션:
+	--conf: 설정파일이 저장된 폴더명(-c)
+	설정파일로 무엇을 읽을건지에 대한 옵션이다.
+	--conf-file: 설정파일명(-f)
+	--name: agent의 이름(-n)
+	-Dflume.root.logger=INFO,console:flume의 로그창에 기록
+
+```
+
+source가 telnet으로 입력하는 데이터인 경우
+
+
+
+클라이언트 모드에서 
+
+[hadoop@hadoop01 root]$ telnet localhost 44444
+
+접속한 다음에 빠져나올 때
+
+ctrl+ ] 눌러서 관리자모드 telnet>으로가서 'quit'누르면 빠져나온다.
+
+```bash
+#/home/hadoop/apache-flume-1.6.0-bin/conf/myfolder.properties
+#agent의 source, channel, sink의 name을 정의
+myConsole.sources=fileSrc
+myConsole.channels=memChannel
+myConsole.sinks=fileSink
+
+#channel에 대한 정보를 명시
+#for source
+myConsole.sources.fileSrc.channels=memChannel
+#for sink
+myConsole.sinks.fileSink.channel=memChannel
+
+#source에 대한 정보를 명시(어디서데이터를 가져올 것인지 명시한다)
+myConsole.sources.fileSrc.type=spoolDir
+myConsole.sources.fileSrc.spoolDir=/home/hadoop/input
+
+#sink에 대한 정보
+#화면에 출력하겠다는 의미이다.(That means input things display on the screen)
+myConsole.sinks.fileSink.type=file_roll
+myConsole.sinks.fileSink.sink.directory=/home/hadoop/output
+
+#channel for detail information
+myConsole.channels.memChannel.type=memory
+myConsole.channels.memChannel.capacity=1000
+
+```
+
+
+
+
+
+![image-20200313151649955](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313151649955.png)
+
+input에 이렇게 넣으면
+
+output에 아래와 같이 생긴다.
+
+output에서 계속해서 파일만 생성해줄 뿐이다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
