@@ -564,6 +564,11 @@ output에서 계속해서 파일만 생성해줄 뿐이다.
 
 
 
+![image-20200314094126358](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314094126358.png)
+
+
+
+alias를 이용해 다르게 나타낼 수 있다.
 
 
 
@@ -571,6 +576,147 @@ output에서 계속해서 파일만 생성해줄 뿐이다.
 
 
 
+그대로 보기위해 지정해 주어야 될 게 datastream이다.
+
+
+
+쓰레드가 따로따로 도는 것이다.
+
+
+
+
+
+
+
+exec에 관한 것
+
+![image-20200314103454087](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314103454087.png)
+
+
+
+2번 머신에서 WAS를 잡기위해서 tomcat을 다운로드와 설치를 해준다.
+
+
+
+tomcat 점유 확인 방법
+
+```bash
+[hadoop@hadoop02 apache-tomcat-9.0.31]$ cd bin
+[hadoop@hadoop02 bin]$ ls
+bootstrap.jar       ciphers.bat                   configtest.bat  digest.sh         setclasspath.sh  startup.sh            tool-wrapper.sh
+catalina-tasks.xml  ciphers.sh                    configtest.sh   makebase.bat      shutdown.bat     tomcat-juli.jar       version.bat
+catalina.bat        commons-daemon-native.tar.gz  daemon.sh       makebase.sh       shutdown.sh      tomcat-native.tar.gz  version.sh
+catalina.sh         commons-daemon.jar            digest.bat      setclasspath.bat  startup.bat      tool-wrapper.bat
+[hadoop@hadoop02 bin]$ ./startup.sh 
+Using CATALINA_BASE:   /home/hadoop/apache-tomcat-9.0.31
+Using CATALINA_HOME:   /home/hadoop/apache-tomcat-9.0.31
+Using CATALINA_TMPDIR: /home/hadoop/apache-tomcat-9.0.31/temp
+Using JRE_HOME:        /usr/java/jdk1.8.0_231-amd64
+Using CLASSPATH:       /home/hadoop/apache-tomcat-9.0.31/bin/bootstrap.jar:/home/hadoop/apache-tomcat-9.0.31/bin/tomcat-juli.jar
+Tomcat started.
+[hadoop@hadoop02 bin]$ netstat -nap | grep 8080
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp6       0      0 :::8080                 :::*                    LISTEN      74696/java          
+[hadoop@hadoop02 bin]$ ./shutdown.sh 
+Using CATALINA_BASE:   /home/hadoop/apache-tomcat-9.0.31
+Using CATALINA_HOME:   /home/hadoop/apache-tomcat-9.0.31
+Using CATALINA_TMPDIR: /home/hadoop/apache-tomcat-9.0.31/temp
+Using JRE_HOME:        /usr/java/jdk1.8.0_231-amd64
+Using CLASSPATH:       /home/hadoop/apache-tomcat-9.0.31/bin/bootstrap.jar:/home/hadoop/apache-tomcat-9.0.31/bin/tomcat-juli.jar
+[hadoop@hadoop02 bin]$ netstat -nap | grep 8080
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp6       0      0 ::1:46060               ::1:8080                TIME_WAIT   -   
+
+```
+
+
+
+
+
+
+
+
+
+admin admin 으로 매니저 페이지 접속
+
+
+
+![image-20200314114828032](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314114828032.png)
+
+
+
+
+
+![image-20200314135140390](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135140390.png)
+
+접속하기 위해서 위와 같이 아이피를 변경해준다.
+
+그리고 export -> WAR 파일 들어가서 war파일을 생성해준다.
+
+![image-20200314135330917](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135330917.png)
+
+그리고 파일이 생성 되었는지 아래와 같이 확인해준다.
+
+![image-20200314135250160](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135250160.png)
+
+그리고 hadoop02머신의 manager 페이지로 가서 WAR 파일을 선택해소 업로드 하고 배치해준다. 그리고 위에서 2번째처럼 /bigdataShop이 잘 들어갔는지 확인해본다.
+
+![image-20200314135517467](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135517467.png)
+
+
+
+그리고 아래 주소로 접속해 아래와 같이 잘 나오는지 확인해본다.
+
+![image-20200314140221760](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314140221760.png)
+
+
+
+
+
+## Agent Type
+
+모든 Type들을 살펴본 것은 아니며 몇 가지 테스트한 Type에 대해서만 기술한다.
+
+### Source Type
+
+* Avro Source: Agent와 Agent를 연결해 주는 Type이다. Agent끼리 연결할 경우에는 Source와 Sink의 Type를 avro로 해주면 된다.
+* Exec Source: 파일을 읽을 때 사용하는 Type이
+
+### Sink Type
+
+
+
+### Channel Type
+
+
+
+
+
+./bin/flume-ng agent -c ./conf/ -f ./conf/hdfs2.properties -n myhdfs
+오후 미션
+1. 3번에 WAS를 구축
+2. WAS에 bigdataShop을 배포
+3. 3번에 flume을 설치
+4. tomcat의 access log를 hdfs에 저장
+-avro 통신
+-hdfs
+/flume/tomcatlog
+5.메일로 제출
+-3번의 was manager 화면에 배포된 목록 캡쳐
+-hdfs에 저장된 access log캡쳐
+-각 머신의 flume 설정 파일
+
+./bin/flume-ng agent --conf conf --conf-file ./conf/console.properties --name myConsole -Dflume.root.logger=INFO,console
+
+[테스트]
+
+하둡머신의 flume 실행
+
+WAS머신의 flume 실행
+
+flume_input 폴더에 로그파일 copy
 
 
 
