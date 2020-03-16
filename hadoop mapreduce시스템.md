@@ -510,6 +510,14 @@ apache-flume-1.6.0-bin]$ ./bin/flume-ng agent
 
 ```
 
+./bin/flume-ng agent -c ./conf/ -f ./conf/hdfs2.properties -n myhdfs
+
+※ 위 -name 옵션의 'myhdfs'는 agent이름으로서 hdfs2.properties의 이름이랑 일치해야 한다!!!!  
+
+\#agent의 source, channel, sink의 name을 정의
+
+myhdfs.sources=fileSrc
+
 source가 telnet으로 입력하는 데이터인 경우
 
 
@@ -696,6 +704,7 @@ admin admin 으로 매니저 페이지 접속
 
 ./bin/flume-ng agent -c ./conf/ -f ./conf/hdfs2.properties -n myhdfs
 오후 미션
+
 1. 3번에 WAS를 구축
 2. WAS에 bigdataShop을 배포
 3. 3번에 flume을 설치
