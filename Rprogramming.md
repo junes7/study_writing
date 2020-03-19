@@ -2,11 +2,11 @@
 
 
 
-![image-20200318170610294](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318170610294.png)
+![image-20200318170610294](.\images\image-20200318170610294.png)
 
 
 
-![image-20200318173656352](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318173656352.png)
+![image-20200318173656352](.\images\image-20200318173656352.png)
 
 위의 빨간색 버전 다운로드 할 것
 
