@@ -10,15 +10,15 @@
 
 위의 빨간색 버전 다운로드 할 것
 
-![image-20200318170737427](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318170737427.png)
+![image-20200318170737427](images/image-20200318170737427.png)
 
 그리고 Windows버전을 선택한 후 base에서 install R for the first time 선택
 
-![image-20200318170849261](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318170849261.png)
+![image-20200318170849261](images/image-20200318170849261.png)
 
 그리고 아래의 R3.6.3 for windows 버전 선택한 후 
 
-![image-20200318170930089](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318170930089.png)
+![image-20200318170930089](images/image-20200318170930089.png)
 
 빨갛게 체크한거 다운로드한다.
 
@@ -34,23 +34,23 @@ RStudio 다운로드 받는 방법
 
 
 
-![image-20200318173156875](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318173156875.png)
+![image-20200318173156875](images/image-20200318173156875.png)
 
 
 
-![image-20200318173223682](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318173223682.png)
+![image-20200318173223682](images/image-20200318173223682.png)
 
 위에서 desktop 버전을 선택한다.
 
-![image-20200318173316675](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318173316675.png)
+![image-20200318173316675](images/image-20200318173316675.png)
 
 여기 위에서 빨간거 선택
 
-![image-20200318173357041](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318173357041.png)
+![image-20200318173357041](images/image-20200318173357041.png)
 
 이거나
 
-![image-20200318173440428](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318173440428.png)
+![image-20200318173440428](images/image-20200318173440428.png)
 
 이것으로 다운로드 받을 것!!
 
@@ -64,7 +64,7 @@ R studio 가 python의 anaconda 역할이다. Python을 잘 사용하기 위해 
 
 
 
-![image-20200319093517575](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319093517575.png)
+![image-20200319093517575](images/image-20200319093517575.png)
 
 만약 3.6.3버전을 설치한 후 사용하다가 라이브러리 충돌이 나면은 previous releases를 들어가서 이전 버전으로 downgrade해준다.
 
@@ -74,31 +74,31 @@ R studio 가 python의 anaconda 역할이다. Python을 잘 사용하기 위해 
 
 #### R을 설치하는 방법
 
-![image-20200319093808019](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319093808019.png)
+![image-20200319093808019](images/image-20200319093808019.png)
 
 위와같이 빨간줄 된 것을 더블클릭해준다.
 
 
 
-![image-20200319093651981](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319093651981.png)
+![image-20200319093651981](images/image-20200319093651981.png)
 
 설치할 때 경로를 위와 같이 잡아준다.
 
-![image-20200319093854962](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319093854962.png)
+![image-20200319093854962](images/image-20200319093854962.png)
 
 위에서 32bit files 체크해제 해준다.
 
-![image-20200319093927611](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319093927611.png)
+![image-20200319093927611](images/image-20200319093927611.png)
 
 기본값으로 설치해준다.
 
-![image-20200319093941311](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319093941311.png)
+![image-20200319093941311](images/image-20200319093941311.png)
 
 바탕화면에 아아콘 생성 체크하고 설치 완료해준다.
 
 
 
-![image-20200319094300773](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319094300773.png)
+![image-20200319094300773](images/image-20200319094300773.png)
 
 R은 위처럼 프로그램을 구현할 수 있는 최소한의 조건만 제공해준다.
 
@@ -108,13 +108,13 @@ R은 위처럼 프로그램을 구현할 수 있는 최소한의 조건만 제�
 
 #### R studio 설치 방법
 
-![image-20200319094723344](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319094723344.png)
+![image-20200319094723344](images/image-20200319094723344.png)
 
 
 
 설치할 때 위와 같이 경로를 설정해주고 설치해준다.
 
-![image-20200319095223860](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319095223860.png)
+![image-20200319095223860](images/image-20200319095223860.png)
 
 
 
@@ -122,19 +122,13 @@ R은 위처럼 프로그램을 구현할 수 있는 최소한의 조건만 제�
 
 
 
-![image-20200319095246730](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319095246730.png)
+![image-20200319095246730](images/image-20200319095246730.png)
 
 
 
 #### 화면 글자 키우는 방법
 
-
-
-
-
-
-
-![image-20200319100713826](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319100713826.png)
+![image-20200319100713826](images/image-20200319100713826.png)
 
 pr ctrl space를 누르면 자동완성 기능이 작동된다.
 
@@ -142,35 +136,31 @@ pr ctrl space를 누르면 자동완성 기능이 작동된다.
 
 
 
-![image-20200319101424681](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319101424681.png)
+![image-20200319101424681](images/image-20200319101424681.png)
 
 ctrl +l을 누르면 console 창 화면이 지워진다.
 
-![image-20200319101317334](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319101317334.png)
+![image-20200319101317334](images/image-20200319101317334.png)
 
 여기 빨간 부분을 더블클릭해서 shortcut을 바꿀 수 있다.
 
-![image-20200319101716896](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319101716896.png)
+![image-20200319101716896](images/image-20200319101716896.png)
 
 여기 위 history는 작업한 명령을 볼 수 있다.
 
 그리고 r.history에 작업하였던 명령이 저장된다. 이것의 저장위치는 
 
-![image-20200319101805440](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319101805440.png)
+![image-20200319101805440](images/image-20200319101805440.png)
 
 여기이다.
 
-
-
-
-
-![image-20200319102043980](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319102043980.png)
+![image-20200319102043980](images/image-20200319102043980.png)
 
 ctrl 1 스크립트 ctrl 2 콘솔
 
 파일 → 뉴 프로젝트 → 뉴 디렉토리 → 뉴 프로젝트 → 
 
-![image-20200319102411101](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319102411101.png)
+![image-20200319102411101](images/image-20200319102411101.png)
 
 경로 위와같이 추가하고 create project를 클릭해 프로젝트를 생성해준다.
 
@@ -178,11 +168,11 @@ ctrl 1 스크립트 ctrl 2 콘솔
 
 그리고 생성된 프로젝트에서 스크립트를 아래와 같이 저장해준다.
 
-![image-20200319102550576](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319102550576.png)
+![image-20200319102550576](images/image-20200319102550576.png)
 
  
 
-![image-20200319102701014](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319102701014.png)
+![image-20200319102701014](images/image-20200319102701014.png)
 
 soft wrap은 줄바꿈을 해주는 설정이다.
 
@@ -194,41 +184,41 @@ tools → project options은 이클립스의 buildpath같은 설정이다.
 
 
 
-![image-20200319102920812](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319102920812.png)
+![image-20200319102920812](images/image-20200319102920812.png)
 
 이렇게 설정해준다.
 
 전체 블록 설정하고 shift + 큰 따옴표 해주면 문자열에 큰 따옴표가 씌어진다.
 
-![image-20200319103714806](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319103714806.png)
+![image-20200319103714806](images/image-20200319103714806.png)
 
 
 
 전체 실행방법 ctrl+A로 전체 블록 설정  → ctrl + enter를 해준다.
 
-![image-20200319104307242](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319104307242.png)
+![image-20200319104307242](images/image-20200319104307242.png)
 
 여기 위에서 화살표 자동 완성 위해서 alt + - 을 눌러준다.
 
-![image-20200319104540647](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319104540647.png)
+![image-20200319104540647](images/image-20200319104540647.png)
 
 여기서 화면 설정 변경해준다.
 
  
 
-![image-20200319105024258](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319105024258.png)
+![image-20200319105024258](images/image-20200319105024258.png)
 
 #### Vector
 
 
 
-![image-20200319120822221](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319120822221.png)
+![image-20200319120822221](images/image-20200319120822221.png)
 
 위와같은 상태로 ctrl enter를 눌렀을 때 esc 누르고 빠져나온다.
 
 아니면 중괄호를 닫아주고  ctrl enter 를 해준다. 
 
-![image-20200319112752378](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319112752378.png)
+![image-20200319112752378](images/image-20200319112752378.png)
 
 데이터 구조
 
@@ -242,7 +232,7 @@ install.packages("sqldf")
 
 require(sqldf)
 
-![image-20200319131817741](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200319131817741.png)
+![image-20200319131817741](images/image-20200319131817741.png)
 
 여기서 byrow 옵션을 주면 출력되는 방향이 열에서 행으로 바뀐다.
 
