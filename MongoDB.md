@@ -15,13 +15,13 @@
   * RasberriPi는 debian 계열이라서 MongoDB 설치하고 센서데이터를 관리할 수 있다.
 * 설치방법
 
-![image-20200316093821180](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316093821180.png)
+![image-20200316093821180](images/image-20200316093821180.png)
 
 빨간줄 되어있는 링크를 선택해준다.
 
 아래와 같이 3.6.17버전에 windows64버전 선택해주고 package는 MSI 선택해준다.
 
-![image-20200316094758771](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316094758771.png)
+![image-20200316094758771](images/image-20200316094758771.png)
 
 
 
@@ -29,23 +29,23 @@
 
 그리고 다운받은 파일의 오른쪽을 클릭하고 속성으로 들어가면 아래와 같은 디스크 크기를 가지고 있다.
 
-![image-20200316094215913](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316094215913.png)
+![image-20200316094215913](images/image-20200316094215913.png)
 
 complete버전 선택해주고 install MongoDB compass 체크해준 다음 설치해준다.
 
-![image-20200316094138576](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316094138576.png)
+![image-20200316094138576](images/image-20200316094138576.png)
 
 
 
 * 설정 방법
 
-![image-20200316100818613](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316100818613.png)
+![image-20200316100818613](images/image-20200316100818613.png)
 
 위와 같은 순서로 해서 환경변수에 들어가서 (path)경로를 설정해준다.
 
 그 다음에 win + R → cmd로 들어간다.
 
-![image-20200316101348689](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316101348689.png)
+![image-20200316101348689](images/image-20200316101348689.png)
 
 이렇게 mongod를 치고 들어가면 에러가 발생한다.
 
@@ -57,31 +57,31 @@ data를 DB 저장할 폴더가 없기 때문이다.
 
 mongod -dbpath C:\iot\bigdata\mongodata
 
-![image-20200316101820999](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316101820999.png)
+![image-20200316101820999](images/image-20200316101820999.png)
 
 이 상태에서 새로운 명령 프롬프트에서 
 
-![image-20200316102436375](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316102436375.png)
+![image-20200316102436375](images/image-20200316102436375.png)
 
 위 그리고 아래와 같이 접속한다.
 
-![image-20200316102822928](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316102822928.png)
+![image-20200316102822928](images/image-20200316102822928.png)
 
 그러면 아래와 같이 서버에 뜬다.
 
 또 웹 브라우저에서 http://127.0.0.1:27017/이렇게 접속하면
 
-![image-20200316102935507](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316102935507.png)
+![image-20200316102935507](images/image-20200316102935507.png)
 
 이렇게 메시지가 뜨고 아래 conn4처럼 메시지가 뜬다.
 
-![image-20200316102711800](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316102711800.png)
+![image-20200316102711800](images/image-20200316102711800.png)
 
 그리고 여러개 사용해서 접속하면 위와같이 메시지가 뜨고 다중 접속이 위와 같이 가능하다.
 
 그리고 웹 사이트 document에서 다음과 같이 접속하는 방법을 살펴볼 수 있다.
 
-![image-20200316103117470](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316103117470.png)
+![image-20200316103117470](images/image-20200316103117470.png)
 
 
 
@@ -119,11 +119,11 @@ db.logout()
 
 * _id: 기본키
 
-![image-20200316104009097](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316104009097.png)
+![image-20200316104009097](images/image-20200316104009097.png)
 
 위와 같이 db 상태를 확인할 수 있다.
 
-![image-20200316104624259](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316104624259.png)
+![image-20200316104624259](images/image-20200316104624259.png)
 
 use mydb; => 계정 생성
 
@@ -137,7 +137,7 @@ show collections; = select * from tab;
 
 => 관계형 DB처럼 schema를 정의하지 않는다.
 
-![image-20200316110654718](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316110654718.png)
+![image-20200316110654718](images/image-20200316110654718.png)
 
 1) 종류
 
@@ -167,17 +167,17 @@ db.createCollection("컬렉션명")  -> 일반 collection
 
 => 각각의 옵션을 설정해서 작업(json)
 
-![image-20200316111242098](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316111242098.png)
+![image-20200316111242098](images/image-20200316111242098.png)
 
 
 
 db.createCollection("컬렉션명",{옵션list})
 
-![image-20200316111513169](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316111513169.png)
+![image-20200316111513169](images/image-20200316111513169.png)
 
 위와 같이 collection을 생성한 후
 
-![image-20200316111742795](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316111742795.png)
+![image-20200316111742795](images/image-20200316111742795.png)
 
 위와 같이 확인 가능하다.
 
@@ -185,7 +185,7 @@ db.createCollection("컬렉션명",{옵션list})
 
 db.collection명.drop()
 
-![image-20200316111904630](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316111904630.png)
+![image-20200316111904630](images/image-20200316111904630.png)
 
 테이블 삭제는 위와 같이 사용할 수 있다.
 
@@ -193,7 +193,7 @@ db.collection명.drop()
 
 db.컬렉션명.renameCollection("변경할컬렉션명");
 
-![image-20200316112002566](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316112002566.png)
+![image-20200316112002566](images/image-20200316112002566.png)
 
 테이블 이름을 바꿀때는 위와 같이 사용할 수 있다.
 
@@ -213,7 +213,7 @@ shop(일반컬렉션)
 
 -db.createCollection("shop") 
 
-![image-20200316113858370](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316113858370.png)
+![image-20200316113858370](images/image-20200316113858370.png)
 
 생성한 collection이 capped인지 non capped인지 확인할 때
 
@@ -227,7 +227,7 @@ show collections;
 
 2.mongodb에 insert
 
-![image-20200316114606852](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316114606852.png)
+![image-20200316114606852](images/image-20200316114606852.png)
 
 
 
@@ -255,13 +255,13 @@ _id 생성 -기본키 역할
 
 ​																							추가될 때마다 증가
 
-![image-20200317155240564](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317155240564.png)
+![image-20200317155240564](images/image-20200317155240564.png)
 
 
 
 * 스카마가 있는지 없는지 확인
 
-  ![image-20200316114840439](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316114840439.png)
+  ![image-20200316114840439](images/image-20200316114840439.png)
 
 arguments(매개변수)에 있는 것들은 생략 가능하다. 
 
@@ -287,7 +287,7 @@ MongoDB는 해당 데이터의 type를 1~255사이의 ID값을 부여하여 정�
 
 간단하게 MongoDB 구조를 정리하면 다음과 같다
 
-![image-20200316123431142](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316123431142.png)
+![image-20200316123431142](images/image-20200316123431142.png)
 
 
 
@@ -297,27 +297,27 @@ MongoDB는 해당 데이터의 type를 1~255사이의 ID값을 부여하여 정�
 
 
 
-![image-20200316131258498](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316131258498.png)
+![image-20200316131258498](images/image-20200316131258498.png)
 
 여기서 위와 같이 삽입을 하고
 
-![image-20200316131349860](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316131349860.png)
+![image-20200316131349860](images/image-20200316131349860.png)
 
 위와 같이 확인할 수 있다.
 
-![image-20200316131924924](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316131924924.png)
+![image-20200316131924924](images/image-20200316131924924.png)
 
 insert는 아래와 같이 할 수도 있다.
 
-![image-20200316132247476](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316132247476.png)
+![image-20200316132247476](images/image-20200316132247476.png)
 
 여러개를 한꺼번에 넣을때 배열로 삽입하면 된다.
 
-![image-20200316132731039](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316132731039.png)
+![image-20200316132731039](images/image-20200316132731039.png)
 
 그러면 위와 같이 확인 가능하다.
 
-![image-20200316133124996](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316133124996.png)
+![image-20200316133124996](images/image-20200316133124996.png)
 
 위와같이 중복해서 값을 넣으려고 하면 위와 같은 에러가 발생한다.
 
@@ -385,7 +385,7 @@ db.컬렉션명.update({조건필드:값},//sql의 update문 where절
 
 ​									{update와 관련된 옵션: 옵션값});
 
-![image-20200316143842967](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316143842967.png)
+![image-20200316143842967](images/image-20200316143842967.png)
 
 
 
@@ -694,11 +694,11 @@ db.board.update({no:3},
 
 db.board.find().pretty()
 
-![image-20200317094628704](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317094628704.png)
+![image-20200317094628704](images/image-20200317094628704.png)
 
 ### 5. Mongodb에 저장된 데이터 조회하기 - find()
 
-![image-20200317095353863](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317095353863.png)
+![image-20200317095353863](images/image-20200317095353863.png)
 
 이렇게 명령문을 javascript 변수에 넣을 수 있다.
 
@@ -706,7 +706,7 @@ db.board.find().pretty()
 
 
 
-![image-20200317095517368](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317095517368.png)
+![image-20200317095517368](images/image-20200317095517368.png)
 
 db.score.insert(x)에서 에러가 나는 이유: primary key가 중복되기 때문이다.
 
@@ -722,11 +722,11 @@ score의 모든 document에 num필드(1000)가 추가되도록 작업
 
 모든 document에 num이란 컬럼이 추가되게 해줄 것
 
-![image-20200317101748888](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317101748888.png)
+![image-20200317101748888](images/image-20200317101748888.png)
 
 실행결과 보기
 
-![image-20200317101853600](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317101853600.png)
+![image-20200317101853600](images/image-20200317101853600.png)
 
 1) find
 
@@ -760,7 +760,7 @@ $ne: (not equal) 주어진 값과 일치하지 않는 값
 
 db.score.find({addr:"인천"},{id:1,name:1,dept:1,addr:1,_id:0})
 
-![image-20200317103643634](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317103643634.png)
+![image-20200317103643634](images/image-20200317103643634.png)
 
 
 
@@ -770,7 +770,7 @@ id,name,dept,java만 출력할 것
 
 db.score.find({java:{$gte:90}},{id:1,name:1,dept:1,java:1,_id:0})
 
-![image-20200317104102923](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317104102923.png)
+![image-20200317104102923](images/image-20200317104102923.png)
 
 $or - 여러 필드를 이용해서 같이 비교 가능하다
 
@@ -798,13 +798,13 @@ db.score.find({$or:[{id:"song"},
 
 ​								  {id:"kang"}]})
 
-![image-20200317171749786](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317171749786.png)
+![image-20200317171749786](images/image-20200317171749786.png)
 
 
 
 db.score.find({id:{$in:["song","hong","kang"]}})
 
-![image-20200317105517585](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317105517585.png)
+![image-20200317105517585](images/image-20200317105517585.png)
 
 
 
@@ -816,15 +816,11 @@ db.score.find({id:{$nin:["song","hong","kang"]}})
 
 db.score.insert({id:"hong123",name:"홍길동",dept:"인사",addr:"서울",java:100,servlet:88})
 
-![image-20200317171836602](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317171836602.png)
+![image-20200317171836602](images/image-20200317171836602.png)
 
 
 
-![image-20200317172032399](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317172032399.png)
-
-
-
-
+![image-20200317172032399](images/image-20200317172032399.png)
 
 
 
@@ -1085,11 +1081,7 @@ db.exam.aggregate([
 
 ​									}]);
 
-![image-20200317152542175](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317152542175.png)
-
-
-
-
+![image-20200317152542175](images/image-20200317152542175.png)
 
 #### mongodb_Aggregation Framework활용하기
 
@@ -1145,21 +1137,21 @@ https://docs.spring.io/spring-data/mongodb/docs/2.1.16.RELEASE/reference/html/#r
 
 
 
-![image-20200317163554163](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317163554163.png)
+![image-20200317163554163](images/image-20200317163554163.png)
 
-![image-20200317164037865](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317164037865.png)
+![image-20200317164037865](images/image-20200317164037865.png)
 
 Project name: mongoTest
 
-![image-20200317164859453](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317164859453.png)
+![image-20200317164859453](images/image-20200317164859453.png)
 
 spring.data.mongoTest 입력할 것
 
-![image-20200317163944833](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317163944833.png)
+![image-20200317163944833](images/image-20200317163944833.png)
 
 
 
-![image-20200317164440950](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317164440950.png)
+![image-20200317164440950](images/image-20200317164440950.png)
 
 sqoop rdbms의 제어이기에 하지 못한다.
 
@@ -1171,19 +1163,19 @@ pom.xml에 라이브러리 등록
 
 
 
-![image-20200317173313172](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317173313172.png)
+![image-20200317173313172](images/image-20200317173313172.png)
 
 설정파일을 이렇게 설정해준다. 
 
 
 
-![image-20200317170612102](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317170612102.png)
+![image-20200317170612102](images/image-20200317170612102.png)
 
 빨간줄이 mongoDB 서버 접속 포트이다.
 
 
 
-![image-20200317173159925](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317173159925.png)
+![image-20200317173159925](images/image-20200317173159925.png)
 
 위와 같이 mongoDB에서 설정해준다.
 
@@ -1195,11 +1187,11 @@ pom.xml에 라이브러리 등록
 
 그리고 머신에 부담을 줄여주기 위해 데이터를 넣을때 update보다는 insert를 많이 사용한다. 그리고 json 베이스라는 점이 매력적이다.
 
-![image-20200318093154079](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093154079.png)
+![image-20200318093154079](images/image-20200318093154079.png)
 
 
 
-![image-20200318093234076](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093234076.png)
+![image-20200318093234076](images/image-20200318093234076.png)
 
 데이터가 없으면 위처럼 0개의 레코드가 추출되었다는 메시지가 뜬다.
 
@@ -1209,17 +1201,17 @@ pom.xml에 라이브러리 등록
 
 
 
-![image-20200318093922892](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093922892.png)
+![image-20200318093922892](images/image-20200318093922892.png)
 
 
 
 
 
-![image-20200318093958799](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093958799.png)
+![image-20200318093958799](images/image-20200318093958799.png)
 
 위와 같이 파일을 import한다.
 
-![image-20200318094332840](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318094332840.png)
+![image-20200318094332840](images/image-20200318094332840.png)
 
 mongoimport에서 -하이픈 데신에 /를 사용한 이유가 version이 업데이트 되면서 사용방법이 바뀌었기 때문이다.
 
@@ -1239,27 +1231,27 @@ mongoimport관련 개념 정리된 블로그
 
 import된 db 확인하는 방법
 
-![image-20200318094259088](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318094259088.png)
+![image-20200318094259088](images/image-20200318094259088.png)
 
 
 
 
 
-![image-20200318101829082](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318101829082.png)
+![image-20200318101829082](images/image-20200318101829082.png)
 
 위와 같이 설정해 주어야 한다.
 
-![image-20200318102501910](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318102501910.png)
+![image-20200318102501910](images/image-20200318102501910.png)
 
 
 
-![image-20200318174039685](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318174039685.png)
+![image-20200318174039685](images/image-20200318174039685.png)
 
 위의 빨간색 요소들 선택
 
 
 
-![image-20200318102529305](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318102529305.png)
+![image-20200318102529305](images/image-20200318102529305.png)
 
 이렇게 위와 같이 설정해준다.
 
@@ -1271,7 +1263,7 @@ RDBMS는 그냥 jdbc 쓰면 된다.
 
 1,2,4,5,6,8,9,11,12,13,14 은 최소 한 번씩은 써볼 것
 
-![image-20200318131704371](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318131704371.png)
+![image-20200318131704371](images/image-20200318131704371.png)
 
 여기 4개는 관계형 데이터베이스이다.
 
@@ -1279,7 +1271,7 @@ ElasticSearch도 급격히 상승하였다.
 
 Solr는 검색에 사용
 
-![image-20200318135116392](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318135116392.png)
+![image-20200318135116392](images/image-20200318135116392.png)
 
 데이터 하나를 삭제할 때 위와같이 설정해 주어야 한다.
 

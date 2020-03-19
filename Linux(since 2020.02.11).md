@@ -10,17 +10,17 @@
 
 alternative downloads →  base Distribution → 
 
-![image-20200211094332628](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211094332628.png)
+![image-20200211094332628](images/image-20200211094332628.png)
 
 그리고 미러버전을 클릭하면 밑과 같이 나온다.
 
-![image-20200211093200816](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211093200816.png)
+![image-20200211093200816](images/image-20200211093200816.png)
 
 
 
 그리고 
 
-![image-20200211103917688](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211103917688.png)
+![image-20200211103917688](images/image-20200211103917688.png)
 
 이 버전을 다운로드 받는다
 
@@ -36,29 +36,29 @@ window키 + pause break키 누르면 시스템 설정 상황이 나온다
 
   
 
-   ![image-20200211110208872](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110208872.png)
+   ![image-20200211110208872](images/image-20200211110208872.png)
 
   
 
  → 
 
-![image-20200211110546716](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110546716.png)
+![image-20200211110546716](images/image-20200211110546716.png)
 
  → 
 
-![image-20200211110646387](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110646387.png)
+![image-20200211110646387](images/image-20200211110646387.png)
 
  → 
 
-![image-20200211110722634](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110722634.png)
+![image-20200211110722634](images/image-20200211110722634.png)
 
  → 
 
-![image-20200211110929643](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110929643.png)
+![image-20200211110929643](images/image-20200211110929643.png)
 
  → 
 
-![image-20200211110949590](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211110949590.png)
+![image-20200211110949590](images/image-20200211110949590.png)
 
  → 
 
@@ -68,45 +68,45 @@ C:\Program Files (x86)\VMware\VMware Player vmware의  →  홈 디렉토리가 
 
 
 
-![image-20200211104013771](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211104013771.png)
+![image-20200211104013771](images/image-20200211104013771.png)
 
 vmware 기본 설정 실행하고 continue 누를 것
 
-![image-20200211104101235](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211104101235.png)
+![image-20200211104101235](images/image-20200211104101235.png)
 
 VMware 기본 홈 화면이다
 
 
 
-![image-20200211104254589](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211104254589.png)
+![image-20200211104254589](images/image-20200211104254589.png)
 
 이렇게 해서 new virtual 머신을 선택한다.
 
-![image-20200211104418588](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211104418588.png)
+![image-20200211104418588](images/image-20200211104418588.png)
 
 그러면 이 화면이 뜨는데 '나는 나중에 설치할게'를 선택해준다.
 
 라즈베리 파이에 설처되어 있는것이 debian이다
 
-![image-20200211104646692](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211104646692.png)
+![image-20200211104646692](images/image-20200211104646692.png)
 
 그리고 centOS7 64비트를 선택해준다
 
-![image-20200211104835766](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211104835766.png)
+![image-20200211104835766](images/image-20200211104835766.png)
 
 위의 virtual machine name은 내가 그냥 주는 이름이다. 근데 hadoop머신 4개 사용할 것이기 때문에 이름을 hadoop01이라고 설정해주었다.
 
- ![image-20200211105159430](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211105159430.png)
+ ![image-20200211105159430](images/image-20200211105159430.png)
 
 그리고 추천하는 디스크 사양인 20GB를 맞춰주고 하나의 파일로 저장하는 것을 선택해준다.
 
-![image-20200211105321265](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211105321265.png)
+![image-20200211105321265](images/image-20200211105321265.png)
 
 여기서 VM머신의 설정을 해줄 수 있다.
 
 C:\Users\student\Documents\Virtual Machines\hadoop01 여기가 중요한 설정 경로이고 이 안에 파일들이 다음과 같이 구성되어 있다.
 
-![image-20200211105452548](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211105452548.png)
+![image-20200211105452548](images/image-20200211105452548.png)
 
 
 
@@ -116,7 +116,7 @@ alt printscreen하면 capture할 수 있다.
 
 ctrl + alt하면 마우스가 나온다
 
-![image-20200211111813550](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211111813550.png)
+![image-20200211111813550](images/image-20200211111813550.png)
 
 
 
@@ -126,13 +126,13 @@ ctrl + alt하면 마우스가 나온다
 
 
 
-![image-20200211112151518](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211112151518.png)
+![image-20200211112151518](images/image-20200211112151518.png)
 
 위와같이 remove from the library를 선택하면 machine을 라이브러리에서 제거할 수 있다.
 
 open경로에서 경로 머신을 찾는다.
 
-![image-20200211112239685](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211112239685.png)
+![image-20200211112239685](images/image-20200211112239685.png)
 
 
 
@@ -140,7 +140,7 @@ open경로에서 경로 머신을 찾는다.
 
 cmd에서 ip확인 시 ipconfig명령어를 사용한다
 
-![image-20200211112600532](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211112600532.png)
+![image-20200211112600532](images/image-20200211112600532.png)
 
 위와같이 ip가 할당되어 있다.
 
@@ -152,7 +152,7 @@ cmd에서 ip확인 시 ipconfig명령어를 사용한다
 
 p68 
 
-![image-20200211113914545](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211113914545.png)
+![image-20200211113914545](images/image-20200211113914545.png)
 
 이런 에러가 발생하는 이유: 이런 ip설정 모듈을 지원해주지 않는다.
 
@@ -164,11 +164,11 @@ p68
 
 NAT 기술이 나온다.
 
-![image-20200211114409496](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211114409496.png)
+![image-20200211114409496](images/image-20200211114409496.png)
 
 VMnet8 선택 후 change settings를 선택한 후 세번째 ip만 111로 바꿔준다.
 
-![image-20200211114514355](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211114514355.png)
+![image-20200211114514355](images/image-20200211114514355.png)
 
 그럼 아래와 같이 아이피가 바뀌어 있는 것을 확인할 수 있다.
 
@@ -194,49 +194,49 @@ secondary name load 로서 hadoop02를 정의해준다.
 
 
 
-![image-20200211133407434](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211133407434.png)
+![image-20200211133407434](images/image-20200211133407434.png)
 
 이 파일 용량이 4.5GB가 되어야 한다.
 
 
 
-![image-20200211133541815](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211133541815.png)
+![image-20200211133541815](images/image-20200211133541815.png)
 
 여기 경로에 한글 이름이 들어가면 안 된다.
 
-![image-20200211133721025](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211133721025.png)
+![image-20200211133721025](images/image-20200211133721025.png)
 
 이 화면에서 하얀색이 포커스이다. centos7을 설치하기 위해 enter를 두 번 누른다.
 
-![image-20200211133932917](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211133932917.png)
+![image-20200211133932917](images/image-20200211133932917.png)
 
 여기서 한국어를 선택해주고 계속 진행해준다.
 
-![image-20200211134046061](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134046061.png)
+![image-20200211134046061](images/image-20200211134046061.png)
 
 키보드 레이아웃 미국 선택해주소 추가해준다.
 
-![image-20200211134135666](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134135666.png)
+![image-20200211134135666](images/image-20200211134135666.png)
 
 영어(미국) 선택해주고 화살표 Λ 이 버튼을 눌러 우선순위를 올려준다.
 
-![image-20200211134234019](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134234019.png)
+![image-20200211134234019](images/image-20200211134234019.png)
 
 소프트웨어 선택에서 '개발 및 창조를 위한 워크스테이션'을 선택해주고 완료 버튼을 눌러준다.
 
-![image-20200211134348951](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134348951.png)
+![image-20200211134348951](images/image-20200211134348951.png)
 
 네트워크 &호스트 이름에서 이더넷을 '끔'에서 '켬'으로 바꿔준다.
 
-![image-20200211134454287](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134454287.png)
+![image-20200211134454287](images/image-20200211134454287.png)
 
 
 
-![image-20200211134724320](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134724320.png)
+![image-20200211134724320](images/image-20200211134724320.png)
 
 세개가 같이 설정되어야 한다. 그리고 완료 버튼을 눌러준다.
 
-![image-20200211134748029](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211134748029.png)
+![image-20200211134748029](images/image-20200211134748029.png)
 
 그리고 수동으로 파티션 설정에서 표준 파티션을 설정해준다.
 
@@ -244,7 +244,7 @@ jps명령어가 잘 작동될 때까지 잘 집중하여야 한다.
 
 
 
-![image-20200211135134834](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211135134834.png)
+![image-20200211135134834](images/image-20200211135134834.png)
 
 swap 메모리는 원래 RAM의 2배 정도로서 설정해야 하지만 지금은 
 
@@ -254,29 +254,29 @@ swap 메모리는 원래 RAM의 2배 정도로서 설정해야 하지만 지금�
 
 swap은 가상메모리이다.
 
-![image-20200211135420024](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211135420024.png)
+![image-20200211135420024](images/image-20200211135420024.png)
 
 
 
-![image-20200211135443141](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211135443141.png)
+![image-20200211135443141](images/image-20200211135443141.png)
 
 
 
-![image-20200211135507021](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211135507021.png)
+![image-20200211135507021](images/image-20200211135507021.png)
 
 그러면 아래와 같이 설치가 시작된다.
 
-![image-20200211140958167](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211140958167.png)
+![image-20200211140958167](images/image-20200211140958167.png)
 
 그러면 위와 같은 화면이 뜬다. 
 
 ROOT암호는 bigdata를 넣어준다.
 
-![image-20200211141235385](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211141235385.png)
+![image-20200211141235385](images/image-20200211141235385.png)
 
 사용자 생성은 성명도 hadoop 암호도 hadoop으로 설정해준다.
 
-![image-20200211141432497](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211141432497.png)
+![image-20200211141432497](images/image-20200211141432497.png)
 
 그 다음 재부팅 해주고 관리자 계정으로 들어간다.
 
@@ -290,7 +290,7 @@ harddisk: 20GB
 
 
 
-![image-20200211155307326](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211155307326.png)
+![image-20200211155307326](images/image-20200211155307326.png)
 
 앞에 순서가 계정 @ host명 홈 디렉토리
 
@@ -321,11 +321,11 @@ ls가 리스트 출력이다.
 
 
 
-![image-20200211162619431](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211162619431.png)
+![image-20200211162619431](images/image-20200211162619431.png)
 
 이게 root가 사용하고 있는 홈 디렉토리이다.
 
-![image-20200211162719871](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211162719871.png)
+![image-20200211162719871](images/image-20200211162719871.png)
 
 * home(홈디렉토리): 특정 계정으로 로그인 했을 때 자동으로 위치하는 폴더
 
@@ -339,7 +339,7 @@ ls가 리스트 출력이다.
 
   일반계정 => 프롬프트 $ 
 
-  ![image-20200211163602403](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200211163602403.png)
+  ![image-20200211163602403](images/image-20200211163602403.png)
 
 su - : 사용자 계정으로부터 관리자 계정으로 전환할 때
 
@@ -411,7 +411,7 @@ initial-setup-ks.cfg  다운로드  바탕화면  사진    음악
    * C:\Users\student\Documents\Virtual Machines 이 안에 들어가서 hadoop1 폴더 카피한다
   
 
-![image-20200212093955033](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212093955033.png)
+![image-20200212093955033](images/image-20200212093955033.png)
 
   
 
@@ -421,9 +421,9 @@ initial-setup-ks.cfg  다운로드  바탕화면  사진    음악
 
 
 
-![image-20200212094510371](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212094510371.png)
+![image-20200212094510371](images/image-20200212094510371.png)
 
-![image-20200212094329684](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212094329684.png)
+![image-20200212094329684](images/image-20200212094329684.png)
 
 
 
@@ -445,7 +445,7 @@ hadoop4: 192.168.111.128
 
 
 
-![image-20200212111352822](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212111352822.png)
+![image-20200212111352822](images/image-20200212111352822.png)
 
 * 다음과 같이 화면 잠금을 꺼주면 된다.
 
@@ -472,11 +472,11 @@ hadoop4: 192.168.111.128
 
        
 
-   ![image-20200212112515321](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212112515321.png)
+   ![image-20200212112515321](images/image-20200212112515321.png)
 
    sts에서 다음과 같이 하여 remote system explorer를 열어준다.
 
-   ![image-20200212112637017](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212112637017.png)
+   ![image-20200212112637017](images/image-20200212112637017.png)
 
    
 
@@ -568,7 +568,7 @@ hadoop4: 192.168.111.128
 
    
 
-![image-20200212133923614](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212133923614.png)
+![image-20200212133923614](images/image-20200212133923614.png)
 
 
 
@@ -580,7 +580,7 @@ hadoop4: 192.168.111.128
 
 현재의 모든 서비스들을 보여준다.
 
-![image-20200212134337155](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212134337155.png)
+![image-20200212134337155](images/image-20200212134337155.png)
 
 
 
@@ -649,7 +649,7 @@ Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
 Hint: Some lines were ellipsized, use -l to show in full.
 [root@hadoop01 ~]#  reboot
 
-![image-20200212141742119](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200212141742119.png)
+![image-20200212141742119](images/image-20200212141742119.png)
 
 여기 있는 내용을 다 삭제해준다.
 
@@ -898,7 +898,7 @@ Connection to hadoop04 closed.
 
    
 
-   ![image-20200213095612860](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213095612860.png)
+   ![image-20200213095612860](images/image-20200213095612860.png)
 
    linux-x64.rpm은 setup.exe같은 버전이고 linux-x64.tar.gz는 zip파일같은 압축 버전이다.
 
@@ -923,7 +923,7 @@ Connection to hadoop04 closed.
 
    
 
-   ![image-20200213102646760](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213102646760.png) 
+   ![image-20200213102646760](images/image-20200213102646760.png) 
 
    
 
@@ -941,21 +941,21 @@ http://apache.org/
 
 →
 
-![image-20200213111510123](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213111510123.png)
+![image-20200213111510123](images/image-20200213111510123.png)
 
 →
 
-![image-20200213111546372](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213111546372.png)
+![image-20200213111546372](images/image-20200213111546372.png)
 
 →
 
-![image-20200213111636954](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213111636954.png)
+![image-20200213111636954](images/image-20200213111636954.png)
 
 
 
 bin.tar.gz는 빈 파일만 들어가 있는거고 tar.gz는 소스 파일도 포함되어 있는 압축 파일이다.
 
-![image-20200213112508870](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213112508870.png)
+![image-20200213112508870](images/image-20200213112508870.png)
 
 여기 소유자 계정이 hadoop인 이유는 복사할때 hadoop계정인 곳으로 복사해 주었기 때문에 이렇게 권한이 뜬다.
 
@@ -1063,7 +1063,7 @@ Deleted hdfs://hadoop01:9000/input
 
 
 
-![image-20200213153528389](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200213153528389.png)
+![image-20200213153528389](images/image-20200213153528389.png)
 
 * /input 밑에 무슨 파일이 있는지 확인할 때 사용하는 명령어
 
@@ -1086,7 +1086,7 @@ http://hadoop01:50070/ 여기 들어가서 확인할 것!!!
 
 이 부분의 word cloud 검색 결과이다.
 
-![image-20200214105016722](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200214105016722.png)
+![image-20200214105016722](images/image-20200214105016722.png)
 
 
 
@@ -1217,13 +1217,13 @@ ko_KR.UTF-8
 
 new → java project
 
-![image-20200217134041388](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217134041388.png)
+![image-20200217134041388](images/image-20200217134041388.png)
 
 저렇게 프로젝트 생성하고 no를 눌러 끝내준다.
 
 
 
-![image-20200217134201771](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217134201771.png)
+![image-20200217134201771](images/image-20200217134201771.png)
 
 저런 경로를 따라서 가줄 것
 
@@ -1231,17 +1231,17 @@ new → java project
 
 
 
-![image-20200217141603035](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217141603035.png)
+![image-20200217141603035](images/image-20200217141603035.png)
 
 이 파일을 ant라고 부른다.
 
 무언가 변경될 때마다 build.xml을 실행시켜 주어야 한다.
 
-![image-20200217145412766](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217145412766.png)
+![image-20200217145412766](images/image-20200217145412766.png)
 
 여기 이 파일을 
 
-![image-20200217145447484](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200217145447484.png)
+![image-20200217145447484](images/image-20200217145447484.png)
 
 여기로 옮겨줄 것!!!
 
@@ -1315,17 +1315,17 @@ jar: java파일 실행
 
 
 
-![image-20200219103540224](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219103540224.png)
+![image-20200219103540224](images/image-20200219103540224.png)
 
 여기중 mapred(mapreduce)이고
 
 dfs는 안에 data랑 namesecondary로서 secondarynamenode에 관한 폴더가 들어있다.
 
-![image-20200219103853594](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219103853594.png)
+![image-20200219103853594](images/image-20200219103853594.png)
 
 여기 data 폴더는 datanode에 관한 정보들이 들어있다.
 
-![image-20200219104009331](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219104009331.png)
+![image-20200219104009331](images/image-20200219104009331.png)
 
 여기는 폴더안에 .meta파일에 대한 정보도 제공해준다.
 
@@ -1333,21 +1333,21 @@ dfs는 안에 data랑 namesecondary로서 secondarynamenode에 관한 폴더가 
 
 하둡머신 1,2,3,4 돌면서
 
-![image-20200219104225582](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219104225582.png)
+![image-20200219104225582](images/image-20200219104225582.png)
 
 
 
 이 그림 안에 있는 폴더를 삭제해준다.
 
-![image-20200219111442501](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219111442501.png)
+![image-20200219111442501](images/image-20200219111442501.png)
 
 이렇게 해서 Quick Type Hierarchy로 들어간 다음에 설정을 해준다.
 
-![image-20200219111219687](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219111219687.png)
+![image-20200219111219687](images/image-20200219111219687.png)
 
 
 
-![image-20200219112259079](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219112259079.png)
+![image-20200219112259079](images/image-20200219112259079.png)
 
 
 
@@ -1369,7 +1369,7 @@ Deleted hdfs://hadoop01:9000/wordcount_output
 
 
 
-![image-20200219135207783](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219135207783.png)
+![image-20200219135207783](images/image-20200219135207783.png)
 
 d는 폴더 - 은 파일을 의미한다. 그리고 rwx는 소유권한을 의미한다.
 
@@ -1451,7 +1451,7 @@ space는 다음 B는 앞 페이지로 이동한다.
 
 
 
-![image-20200219152732656](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219152732656.png)
+![image-20200219152732656](images/image-20200219152732656.png)
 
 
 
@@ -1483,7 +1483,7 @@ job은 맵과 리듀스를 처리해주는 역할 -> Driver에 구현해 주었�
 
 
 
-![image-20200219174959549](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200219174959549.png)
+![image-20200219174959549](images/image-20200219174959549.png)
 
 
 
@@ -1581,41 +1581,41 @@ Found 1 items
 
 root에서 hadoop 머신을 시작했을 때
 
-![image-20200224093212580](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224093212580.png)
+![image-20200224093212580](images/image-20200224093212580.png)
 
 저기 밑줄 친 hadoop-data를 날리고 reboot하고 namenode 초기화한다.
 
 
 
-![image-20200224100705740](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224100705740.png)
+![image-20200224100705740](images/image-20200224100705740.png)
 
-![image-20200224101033393](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224101033393.png)
+![image-20200224101033393](images/image-20200224101033393.png)
 
 
 
-![image-20200224101914795](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224101914795.png)
+![image-20200224101914795](images/image-20200224101914795.png)
 
 이 상태로 되어있으면 외부에서 hadoop01이란 hostname을 인식할 수 없기 때문에 이 호스트이름을 IP로 바꿔준다.
 
-![image-20200224102101662](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224102101662.png)
+![image-20200224102101662](images/image-20200224102101662.png)
 
 그러면 위와 같이 설정이 변경된다. core-site.xml뿐만 아니라. hdfs-site.xml,  mapred-site.xml도 변경해준다.
 
-![image-20200224102327714](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224102327714.png)
+![image-20200224102327714](images/image-20200224102327714.png)
 
-![image-20200224102509693](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224102509693.png)
+![image-20200224102509693](images/image-20200224102509693.png)
 
 value에 /로 설정해 놓았다는 의미는 최상위 폴더로서 그 하위의 파일들을 다 매맵핑해서 볼 수 있다는 의미이다.
 
 그리고 sts에서 new → java proejct를 통해 advancedMapReduce 이름으로 생성해준다. 그리고 mapred.exam.air 패키지를 복사한 다음 configure build path로 가서 라이브러리 두 개를 추가해준다. 그래야 엑스박스가 없어진다.
 
-![image-20200224103458983](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224103458983.png)
+![image-20200224103458983](images/image-20200224103458983.png)
 
 여기는 외부 라이브러리들이 대부분이다. 대부분이 실행과 관련된 라이브러리들이다.
 
 
 
-![image-20200224103904268](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224103904268.png)
+![image-20200224103904268](images/image-20200224103904268.png)
 
 여기 그림처럼 hadoop-1.2.1밑의 lib폴더와 conf 폴더에서 파일들을 복사해서 위와 같이 복사해준다.
 
@@ -1623,39 +1623,39 @@ value에 /로 설정해 놓았다는 의미는 최상위 폴더로서 그 하위
 
 이래야 java project에서 인식이 된다.
 
-![image-20200224104201079](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104201079.png)
+![image-20200224104201079](images/image-20200224104201079.png)
 
 그다음에 apply and close하면 다음과 같이 느낌표가 뜬다.
 
-![image-20200224104335394](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104335394.png)
+![image-20200224104335394](images/image-20200224104335394.png)
 
 이 에러는 읽을 수 없는 파일들이 있다는 의미이다. 그래서 아래의 buildpath 경로로 가서 그 파일들을 제거해 주면 아래와 같이 느낌표가 없어진다.
 
-![image-20200224104600891](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104600891.png)
+![image-20200224104600891](images/image-20200224104600891.png)
 
 여기 아래처럼 AirDriver를 실행시켰을 때 위와 같이 ArrayIndexOut of BoundsException에러가 뜨는데 이때 코드 창에서 오른쪽 클릭하고 run as → run configuration 들어가서 Arguments탭에 들어가서 ${string_prompt} 를 설정해주고 apply → run 해준다.
 
-![image-20200224104813046](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104813046.png)
+![image-20200224104813046](images/image-20200224104813046.png)
 
 그러면 아래와 같이 Variable Input 창이 뜨는데 거기서 아래와 같이 입력해주고 실행해주면 
 
-![image-20200224104936053](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224104936053.png)
+![image-20200224104936053](images/image-20200224104936053.png)
 
 아래와 같이 에러가 발생한다.
 
-![image-20200224105254339](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224105254339.png)
+![image-20200224105254339](images/image-20200224105254339.png)
 
 이 에러는 기본적으로 hadoop은 외부에서 읽을수는 있지만 작성할 수 있는 권한이 없기 때문에 이런 에러가 뜬다.
 
 먼저 하둡 머신 동작을 stop해준다.
 
-![image-20200224111151354](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224111151354.png)
+![image-20200224111151354](images/image-20200224111151354.png)
 
 이 에러를 해결 하기 위해 위와 같이 dfs.permission 프로퍼티를 추가해주고 설정을 false로 해준다. 즉 저 설명 의미가 퍼미션에 관한 모든 설정을 해제하겠다는 의미이다.
 
 그리고 설정파일 복사해서 scp 명령어 통해서 각 머신으로 복사해주고 하둡 실행해준다.
 
-![image-20200224112721536](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224112721536.png)
+![image-20200224112721536](images/image-20200224112721536.png)
 
 그리고 1로 시작하는 모든 파일을 읽어서 실행하고 /mywork밑에 air_eclipse 폴더에 파일을 생성하라는 의미이다.
 
@@ -1665,27 +1665,27 @@ value에 /로 설정해 놓았다는 의미는 최상위 폴더로서 그 하위
 
 
 
-![image-20200224112609522](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224112609522.png)
+![image-20200224112609522](images/image-20200224112609522.png)
 
 
 
 
 
-![image-20200224113104366](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224113104366.png)
+![image-20200224113104366](images/image-20200224113104366.png)
 
 이렇게 빌디 패스를 추가해주고 실행해준다.
 
 
 
-![image-20200224113902733](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224113902733.png)
+![image-20200224113902733](images/image-20200224113902733.png)
 
 그러나 여기 결과 데이터를 살펴보면 1987년과 1988년 결과가 합쳐져서 나온다. 그러므로 구분을 해주기 위해 mapper에서 년도도 output key로 설정해준다.
 
-![image-20200224114301804](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224114301804.png)
+![image-20200224114301804](images/image-20200224114301804.png)
 
 그 다음 변경 사항 적용 위해서 mapred-exam.jar를 삭제하고 다시 jar export해서 그 파일을 추가하고 실행해준다.
 
-![image-20200224114501379](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224114501379.png)
+![image-20200224114501379](images/image-20200224114501379.png)
 
 그럼 위와 같이 분류되어서 결과가 나온다.
 
@@ -1722,7 +1722,7 @@ value에 /로 설정해 놓았다는 의미는 최상위 폴더로서 그 하위
 
 * 파일을 
 
-![image-20200224134613378](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200224134613378.png)
+![image-20200224134613378](images/image-20200224134613378.png)
 
 
 

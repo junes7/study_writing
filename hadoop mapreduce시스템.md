@@ -10,7 +10,7 @@ jobclient
 
 
 
-![image-20200309095205913](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200309095205913.png)
+![image-20200309095205913](images/image-20200309095205913.png)
 
 파일 실행 결과가 몇 개이냐에 따라 part-r-00000이 몇 개 생성된다.
 
@@ -29,7 +29,7 @@ Deleted hdfs://192.168.111.132:9000/input/1988.csv
 
 
 
-![](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200309105039314.png)
+![](images/image-20200309105039314.png)
 
 
 
@@ -45,7 +45,7 @@ Map은 10개 reduce는 1개라는 의미이다.
 
 
 
-![image-20200309113627919](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200309113627919.png)
+![image-20200309113627919](images/image-20200309113627919.png)
 
 이 에러가 발생하는 이유
 
@@ -100,11 +100,11 @@ SQL> select rownum,ename,sal
 
 Combiner 사용하기 전
 
-![image-20200309132211999](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200309132211999.png)
+![image-20200309132211999](images/image-20200309132211999.png)
 
 Combiner 사용한 후
 
-![image-20200309132259228](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200309132259228.png)
+![image-20200309132259228](images/image-20200309132259228.png)
 
 
 
@@ -122,7 +122,7 @@ Combiner 사용한 후
 
 
 
-![image-20200311102600841](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311102600841.png)
+![image-20200311102600841](images/image-20200311102600841.png)
 
 https://leejonggun.tistory.com/9
 
@@ -142,11 +142,11 @@ ID별로 몇 번 클릭되었는지
 
 어떤것이 첫 번째걸로 묶이는지 본다
 
-![image-20200311105243047](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311105243047.png)
+![image-20200311105243047](images/image-20200311105243047.png)
 
 
 
-![image-20200311105401568](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311105401568.png)
+![image-20200311105401568](images/image-20200311105401568.png)
 
 내부에서 키 값이 계속 변하고 있다
 
@@ -156,7 +156,7 @@ ID별로 몇 번 클릭되었는지
 
 
 
-![image-20200311162528417](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200311162528417.png)
+![image-20200311162528417](images/image-20200311162528417.png)
 
 이파일 링크 복사한 다음에 다운로드 할 것
 
@@ -170,19 +170,19 @@ classNotFoundException 에러가 뜨면 jar파일을 export해서 추가해 주�
 
 
 
-![image-20200312092825808](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312092825808.png)
+![image-20200312092825808](images/image-20200312092825808.png)
 
 
 
 
 
-![image-20200312095406003](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312095406003.png)
+![image-20200312095406003](images/image-20200312095406003.png)
 
 이렇게 스쿱 압축파일을 풀어준다.
 
 
 
-![image-20200312104321119](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104321119.png)
+![image-20200312104321119](images/image-20200312104321119.png)
 
 숨김파일 보이기 설정할 것
 
@@ -190,7 +190,7 @@ classNotFoundException 에러가 뜨면 jar파일을 export해서 추가해 주�
 
 
 
-![image-20200312104537219](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104537219.png)
+![image-20200312104537219](images/image-20200312104537219.png)
 
 profile은 리눅스 계정으로 접속해 실행하면 보이는 파일이다.
 
@@ -198,27 +198,27 @@ profile은 리눅스 계정으로 접속해 실행하면 보이는 파일이다.
 
 
 
-![image-20200312104826884](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104826884.png)
+![image-20200312104826884](images/image-20200312104826884.png)
 
 위 파일이나
 
-![image-20200312104902787](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312104902787.png)
+![image-20200312104902787](images/image-20200312104902787.png)
 
 아래 파일들은 잘못 수정해주면 커널 실행이 안 된다. 
 
 그러므로 조심해 주어야 한다.
 
-![image-20200312105319898](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312105319898.png)
+![image-20200312105319898](images/image-20200312105319898.png)
 
 
 
-![image-20200312110850229](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312110850229.png)
+![image-20200312110850229](images/image-20200312110850229.png)
 
 
 
 어디에서든지 사용하려면 라이브러리.jar 파일이 있어야 한다.
 
-![image-20200312113206024](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200312113206024.png)
+![image-20200312113206024](images/image-20200312113206024.png)
 
 
 
@@ -304,7 +304,7 @@ sqoop export -connect jdbc:oracle:thin:@70.12.115.59:1521:xe \
 
 이러면 아래와 같은 에러가 발생한다.
 
-![image-20200313095533817](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313095533817.png)
+![image-20200313095533817](images/image-20200313095533817.png)
 
 
 
@@ -322,7 +322,7 @@ sqoop export -connect jdbc:oracle:thin:@70.12.115.59:1521:xe \
 
 Apache Flume 데이터 수집 프로그램
 
-![image-20200313101251491](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313101251491.png)
+![image-20200313101251491](images/image-20200313101251491.png)
 
 위 그림에서 네모 부분이 Agent이다.
 
@@ -332,7 +332,7 @@ source는 내가 내부에서 담고 있는 부분이다.
 
 
 
-![image-20200313102248304](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313102248304.png)
+![image-20200313102248304](images/image-20200313102248304.png)
 
 
 
@@ -364,7 +364,7 @@ hadoop01, 02에서 Apache Flume를 설치하여 사용한다.
 
 
 
-![image-20200313103712345](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313103712345.png)
+![image-20200313103712345](images/image-20200313103712345.png)
 
 이 빨간 줄 버전을 wget으로 다운받는다.
 
@@ -447,7 +447,7 @@ flume-conf.properties.template  flume-env.ps1.template  flume-env.sh  flume-env.
 
 3.
 
-![image-20200313111205537](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313111205537.png)
+![image-20200313111205537](images/image-20200313111205537.png)
 
 
 
@@ -562,7 +562,7 @@ myConsole.channels.memChannel.capacity=1000
 
 
 
-![image-20200313151649955](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200313151649955.png)
+![image-20200313151649955](images/image-20200313151649955.png)
 
 input에 이렇게 넣으면
 
@@ -572,7 +572,7 @@ output에서 계속해서 파일만 생성해줄 뿐이다.
 
 
 
-![image-20200314094126358](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314094126358.png)
+![image-20200314094126358](images/image-20200314094126358.png)
 
 
 
@@ -598,7 +598,7 @@ alias를 이용해 다르게 나타낼 수 있다.
 
 exec에 관한 것
 
-![image-20200314103454087](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314103454087.png)
+![image-20200314103454087](images/image-20200314103454087.png)
 
 
 
@@ -651,33 +651,33 @@ admin admin 으로 매니저 페이지 접속
 
 
 
-![image-20200314114828032](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314114828032.png)
+![image-20200314114828032](images/image-20200314114828032.png)
 
 
 
 
 
-![image-20200314135140390](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135140390.png)
+![image-20200314135140390](images/image-20200314135140390.png)
 
 접속하기 위해서 위와 같이 아이피를 변경해준다.
 
 그리고 export -> WAR 파일 들어가서 war파일을 생성해준다.
 
-![image-20200314135330917](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135330917.png)
+![image-20200314135330917](images/image-20200314135330917.png)
 
 그리고 파일이 생성 되었는지 아래와 같이 확인해준다.
 
-![image-20200314135250160](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135250160.png)
+![image-20200314135250160](images/image-20200314135250160.png)
 
 그리고 hadoop02머신의 manager 페이지로 가서 WAR 파일을 선택해소 업로드 하고 배치해준다. 그리고 위에서 2번째처럼 /bigdataShop이 잘 들어갔는지 확인해본다.
 
-![image-20200314135517467](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314135517467.png)
+![image-20200314135517467](images/image-20200314135517467.png)
 
 
 
 그리고 아래 주소로 접속해 아래와 같이 잘 나오는지 확인해본다.
 
-![image-20200314140221760](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200314140221760.png)
+![image-20200314140221760](images/image-20200314140221760.png)
 
 
 
