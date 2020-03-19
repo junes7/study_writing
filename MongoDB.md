@@ -55,6 +55,8 @@ data를 DB 저장할 폴더가 없기 때문이다.
 
 그래서 아래와 같이 만들고 명령어 치면 아래와 같이 서버가 대기상태에 들어간다.
 
+mongod -dbpath C:\iot\bigdata\mongodata
+
 ![image-20200316101820999](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200316101820999.png)
 
 이 상태에서 새로운 명령 프롬프트에서 
@@ -252,6 +254,10 @@ _id 생성 -기본키 역할
 ​																								-------------
 
 ​																							추가될 때마다 증가
+
+![image-20200317155240564](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317155240564.png)
+
+
 
 * 스카마가 있는지 없는지 확인
 
@@ -630,11 +636,11 @@ db.createCollection("board");
 
 no,id,title,content,count,writedate
 
-db.board.insert({no:001,id:"kang",title:"게시글1",content:"안녕하세요1",count:10,writedate:new Date});
-db.board.insert({no:002,id:"jang",title:"게시글2",content:"안녕하세요2",count:20,writedate:new Date});
-db.board.insert({no:003,id:"hong",title:"게시글3",content:"안녕하세요3",count:30,writedate:new Date});
-db.board.insert({no:004,id:"park",title:"게시글4",content:"안녕하세요4",count:40,writedate:new Date});
-db.board.insert({no:005,id:"lee",title:"게시글5",content:"안녕하세요5",count:50,writedate:new Date});
+db.board.insert({no:1,id:"kang",title:"게시글1",content:"안녕하세요1",count:10,writedate:new Date});
+db.board.insert({no:2,id:"jang",title:"게시글2",content:"안녕하세요2",count:20,writedate:new Date});
+db.board.insert({no:3,id:"hong",title:"게시글3",content:"안녕하세요3",count:30,writedate:new Date});
+db.board.insert({no:4,id:"park",title:"게시글4",content:"안녕하세요4",count:40,writedate:new Date});
+db.board.insert({no:5,id:"lee",title:"게시글5",content:"안녕하세요5",count:50,writedate:new Date});
 
 
 3. 2번째 게시물에는 댓글이 3개 추가되도록
@@ -670,3 +676,611 @@ db.board.update({id:"jang"},
 
 
 
+db.board.update({no:3},
+		{\$push:
+			{comment:
+				{content:"댓글내용",
+
+​				 count1:10,
+
+​                 count2:1,
+
+​                 writedate:new Date()}
+​			}
+​		}
+​	)
+
+화면 클리어 하는 명령어: cls
+
+db.board.find().pretty()
+
+![image-20200317094628704](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317094628704.png)
+
+### 5. Mongodb에 저장된 데이터 조회하기 - find()
+
+![image-20200317095353863](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317095353863.png)
+
+이렇게 명령문을 javascript 변수에 넣을 수 있다.
+
+또 x변수에 선언한 score 테이블에 num이란 컬럼이랑 120이란 리터럴을 삽입해준다.
+
+
+
+![image-20200317095517368](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317095517368.png)
+
+db.score.insert(x)에서 에러가 나는 이유: primary key가 중복되기 때문이다.
+
+db.score.save(x): 값이 원래 없던거면 insert를 해주는 거고 원래 값이 있었으면 update 역할을 해준다.
+
+db.score.find().count(): score 테이블에 document(레코드) 개수를 말한다.
+
+
+
+[실습1]
+
+score의 모든 document에 num필드(1000)가 추가되도록 작업
+
+모든 document에 num이란 컬럼이 추가되게 해줄 것
+
+![image-20200317101748888](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317101748888.png)
+
+실행결과 보기
+
+![image-20200317101853600](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317101853600.png)
+
+1) find
+
+db.컬렉션명.find(조건, 조회할 필드에 대한 명시)
+
+-db.컬렉션명.find({})와 동일
+
+:{}안에 아무것도 없으면 전체 데이터 조회
+
+-조건, 조회할 필드에 대한 명시 모두 json
+
+-조회할 필드의 정보 명시
+
+형식:{필드명:1...}: 화면에 표시하고 싶은 필드
+
+​         {필드명:0}: 명시한 필드가 조회되지 않도록 처리
+
+[조건]
+
+$lt: \< (less than) 주어진 값과 일치하는 값
+
+$gt: \> (greater than) 주어진 값보다 큰 값
+
+$lte: \<= (less than or equals) 주어진 값보다 작거나 같은 값
+
+$gte: \>= (greater than or equals) 주어진 값보다 크거나 같은 값
+
+$ne: (not equal) 주어진 값과 일치하지 않는 값
+
+-addr이 인천인 데이터: id, name, dept, addr
+
+db.score.find({addr:"인천"},{id:1,name:1,dept:1,addr:1,_id:0})
+
+![image-20200317103643634](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317103643634.png)
+
+
+
+-score컬렉션에서 java가 90점 이상인 document조회
+
+id,name,dept,java만 출력할 것
+
+db.score.find({java:{$gte:90}},{id:1,name:1,dept:1,java:1,_id:0})
+
+![image-20200317104102923](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317104102923.png)
+
+$or - 여러 필드를 이용해서 같이 비교 가능하다
+
+$and - and 연산
+
+$in - 하나의 필드에서만 비교| 주어진 배열 안에 속하는 값
+
+$nin - not in | 주어진 배열 안에 속하지 않는 값
+
+$in으로 정의한 조건을 제외한 document를 조회
+
+
+
+-dept가 인사이거나 addr이 인천인 데이터 조회
+
+db.score.find({$or:[{dept:"인사"},
+
+​								  {addr:"인천"}]})
+
+-id가 song, kang, hong인 데이터 조회
+
+db.score.find({$or:[{id:"song"},
+
+​								  {id:"hong"},
+
+​								  {id:"kang"}]})
+
+![image-20200317171749786](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317171749786.png)
+
+
+
+db.score.find({id:{$in:["song","hong","kang"]}})
+
+![image-20200317105517585](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317105517585.png)
+
+
+
+-id가 song, kang, hong이 아닌 데이터 조회
+
+db.score.find({id:{$nin:["song","hong","kang"]}})
+
+-id 구분 위하여 데이터 하나 추가하기
+
+db.score.insert({id:"hong123",name:"홍길동",dept:"인사",addr:"서울",java:100,servlet:88})
+
+![image-20200317171836602](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317171836602.png)
+
+
+
+![image-20200317172032399](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317172032399.png)
+
+
+
+
+
+
+
+2) 조회메소드
+
+-findOne(): 첫 번째 document만 리턴
+
+-find(): 모든 document 리턴
+
+-count():행의 갯수를 리턴
+
+-sort({필드명:sort옵션}): 정렬
+
+​											1 => 오름차순
+
+​											-1 => 내림차순
+
+-limit(숫자): 숫자만큼의 document만 출력
+
+-skip(숫자): 숫자만큼의 document를 skip하고 조회
+
+db.score.find().sort({id:1}); //id 기준 오름차순
+
+db.score.find().sort({java:-1}); //java 기준 내림차순
+
+db.score.find().limit(5);
+
+db.score.find().skip(5);
+
+3) 정규표현식을 적용
+
+db.컬렉션명.find({조건필드명:/정규표현식/옵션})
+
+db.score.insert({id:"KIM",pass:"1234"})
+
+^ 데이터 삽입
+
+[기호]
+
+|: or
+
+^: ^뒤의 문자로 시작하는지 체크
+
+\$: \$앞의 문자가 있는지 체크
+
+\[ \]: 영문자 하나는 한 글자를 의미하고 []로 묶으면 여러 글자를 표현한다.
+
+\[a-i\]: a에서 i까지의 모든 영문자
+
+[옵션]
+
+i: 대소문자 구분없이 조회 가능
+
+
+
+-id가 kim과 park인 document조회
+
+db.score.find({id:/kim|park/})
+
+db.score.find({id:/kim|park/i}) 이러면 id가 대문자인 'KIM' 도 조회된다.
+
+-id가 k로 시작하는 document조회
+
+db.score.find({id:/^k/})
+
+db.score.find({id:/^k/i})
+
+-[a-i]까지 영문이 있는 id를 조회 a,b,c,d,e,f,g,h,i
+
+db.score.find({id:/[a-i]/})
+
+-id가 k-p로 시작하는 document 조회 k,l,m,n,o,p
+
+db.score.find({id:/^[k-p]/})
+
+-id에 a와 i가 있는 document 조회하는 작업
+
+db.score.find({id:/[ai]/}) a가 있거나 i가 있는 것들을 찾아내기
+
+db.score.find({id:/[kp]/}) k가 있거나 p가 있는 것들을 찾아내기
+
+### 6. Mongodb에 저장된 데이터 조회하기 - remove()
+
+-조건을 정의하는 방법은 find()나 update()와 동일
+
+```bash
+> db.score.find().count();
+14
+> db.score.remove({servlet:{$lt:80}});
+WriteResult({ "nRemoved" : 2 })
+> db.score.find().count();
+12
+```
+
+​	db.score.remove({servlet:{$lt:80}});
+
+#### $regex 연산자
+
+{ \<field>: /pattern/\<options>} 이런 형태로 정규표현식으로 쿼리를 날릴 수 있다.
+
+* i: 대소문자 무시
+* m: 정규식에서 anchor(^)를 사용할 때 값에 \n이 있다면 무력화
+* x: 정규식 안에있는 whitespace를 모두 무시
+* s: dot (.) 사용할 때 \n을 포함해서 매치
+
+db.articles.find({"title": /article0[1-2]/ })
+
+#### $where 연산자
+
+$where 연산자를 통해 javascript expression을 사용할 수 있다.
+
+db.articles.find({$where: "this.comments.length == 0"})
+
+#### $elem Match 연산자
+
+$elem Match 연산자는 Embedded Documents 배열을 쿼리할 때 사용한다.
+
+http://blog.naver.com/PostView.nhn?blogId=2_ten&logNo=220507274312&categoryNo=65&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+
+https://psyatreion.tistory.com/498
+
+
+
+투표: 30%
+코드내용: 50%
+-기능이 얼마나 많이 구현되었는지
+-수업시간에 배운 내용이 충실하게 구현되었는지
+-open api를 사용해서 새로운 기능에 도전했는지
+-실무에서 사용할 수 있는 형태를 고민해서 구현했는지
+-발표할 때 에러없이 실행되었는지
+
+협업: 20%
+
+[mongodb_find]
+
+1. Score collection에서 이름과 주소와 servlet점수를 출력해보자
+  db.score.find({},{name:1,addr:1,servlet:1,_id:0}).pretty()
+
+2. Score collection에서 java점수 중 70점 이상을 출력해보자
+  db.score.find({java:{$gte:70}}).pretty()
+
+3. Score collection에서 이름, java점수를 출력하고 bonus가 2000이상n
+  인 사람만 출력해보자
+  db.score.find({bonus:{$gte:2000}},{name:1,java:1}).pretty()
+
+4. score에서 dept가 인사이면서 addr이 안양이거나 대구인 document 출력
+  db.score.find({$and:[{dept:"인사"},{addr:{$in:["안양","대구"]}}]})
+
+5. servlet이 70에서 90사이이며 dept가 총무인 document 조회
+  db.score.find({$and:[{dept:"총무"},{servlet:{$gte:70,$lte:90}}]})
+
+6. score에서 이름에 김씨인 사람 조회해보기
+  db.score.find({id:/^kim/})
+
+7. score에서 servlet점수가 가장 낮은 document와 가장 높은 document 출력하기
+  db.score.find({}).sort({servlet:-1}).limit(1)
+  db.score.find({}).sort({servlet:1}).limit(1)
+
+8. java점수가 가장 높은 document중에 7개를 출력하되 2개를 건너뛰고 출력해보자
+  db.score.find({}).sort({java:1}).skip(2).limit(7)
+
+9. 아이디에 n과 o가 들어가는 것 구하기
+  db.score.find({id:/n|o/})
+
+  db.score.find({id:/n/,id:/o/})
+
+db.score.find({servlet:{$exists:null}})
+
+db.score.find({servlet:{$not:{$exists:null}}}).sort({servlet:1}).limit(1);
+
+
+
+## 7.MongoDB에서 Aggregation
+
+-group by 와 동일개념
+
+-간단한 집계를 구하는 경우 mapreduce를 적용하는 것보다 간단하게 작업한다.
+
+-Pipeline을 내부에서 구현
+
+한 연산의 결과가 또 다른 연산의 input 데이터로 활용한다.
+
+https://docs.mongodb.com/v3.6/core/aggregation-pipeline/
+
+의 그림을 살펴볼 것
+
+#### 1) 명령어(RDBMS와 비교)
+
+$match: where절, having절
+
+$group: group by
+
+$sort: order by
+
+$avg: avg그룹함수
+
+$sum: sum그룹함수
+
+$max: max그룹함수
+
+[형식]
+
+db.컬렉션명.aggregate(aggregate명령어를 정의)
+
+​										------------------------------------
+
+​										여러 가지를 적용해야 하는 경우 배열
+
+$group:{_id: 그룹으로 표시할 필드명, 연산결과를 저장할 필드명:{연산함수:값}}
+
+​																											----------------
+
+​																											숫자나 필드참조
+
+$match:{필드명:{연산자:조건값}}
+
+​				----------------------------------
+
+​                 비교연산 or 조건이 여러 개
+
+-addr별 인원수
+
+db.exam.aggregate([{$group:{_id:"$addr",num:{$sum:1}}
+
+​									}]);
+
+//1씩 더해진다.
+
+-dept별 인원수
+
+db.exam.aggregate([{$group:{_id:"$dept",num:{$sum:1}}
+
+​									}]);
+
+-dept별 java점수의 평균
+
+db.exam.aggregate([{$group:{_id:"$dept",avg_java:{$avg:"$java"}}
+
+​									}]);
+
+-addr별 servlet 합계
+
+db.exam.aggregate([{$group:{_id:"$addr",sum_servlet:{$sum:"$servlet"}}
+
+​									}]);
+
+-dept별 java점수의 평균, 단 addr이 인천인 데이터만 작업
+
+$match를 추가
+
+db.exam.aggregate([
+
+​								{$match:{addr:"인천"}},
+
+​								{$group:{_id:"$dept"
+
+​										,평균:{\$avg:"$java"}}
+
+​									}]);
+
+![image-20200317152542175](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317152542175.png)
+
+
+
+
+
+#### mongodb_Aggregation Framework활용하기
+
+1. dept가 인사인 document의 servlet평균 구하기
+db.exam.aggregate([
+	{\$match:{dept:"인사"}},
+	{\$group:{_id:"$dept",평균:{$avg:"$servlet"}}}
+])
+
+2. java가 80점이 넘는 사람들의 부서별로 몇 명인지 구하기
+db.exam.aggregate([
+	{\$match:{java:{\$gt:80}}},
+	{\$group:{_id:"$dept",부서별인원수:{\$sum:1}}}
+])
+
+3. 2번 결과를 인원수데이터를 내림차순으로 정렬해 보세요.
+db.exam.aggregate([
+	{\$match:{java:{\$gte:80}}},
+	{\$group:{_id:"\$dept",'부서별인원수':{\$sum:1}}},
+	{\$sort:{'부서별인원수':-1}}
+])
+
+```bash
+> db.exam.aggregate([
+... {$match:{dept:"인사"}},
+... {$group:{_id:"$dept",평균:{$avg:"$servlet"}}} 
+... ])
+{ "_id" : "인사", "평균" : 90.2 }
+> db.exam.aggregate([
+... {$match:{java:{$gt:80}}},
+... {$group:{_id:"$dept",부서별인원수:{$sum:1}}}
+... ])
+{ "_id" : "총무", "부서별인원수" : 1 }
+{ "_id" : "전산", "부서별인원수" : 4 }
+{ "_id" : "인사", "부서별인원수" : 3 }
+>
+>
+> 3. 2번 결과를 인원수데이터를 내림차순으로 정렬해 보세요.
+> db.exam.aggregate([
+... {$match:{java:{$gt:80}}},
+... {$group:{_id:"$dept",num:{$sum:1}}},
+... {$sort:{num:-1}}
+... ])
+{ "_id" : "전산", "부서별인원수" : 4 }
+{ "_id" : "인사", "부서별인원수" : 3 }
+{ "_id" : "총무", "부서별인원수" : 1 }
+>
+```
+
+
+
+https://docs.spring.io/spring-data/mongodb/docs/2.1.16.RELEASE/reference/html/#repositories.core-concepts
+
+
+
+![image-20200317163554163](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317163554163.png)
+
+![image-20200317164037865](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317164037865.png)
+
+Project name: mongoTest
+
+![image-20200317164859453](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317164859453.png)
+
+spring.data.mongoTest 입력할 것
+
+![image-20200317163944833](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317163944833.png)
+
+
+
+![image-20200317164440950](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317164440950.png)
+
+sqoop rdbms의 제어이기에 하지 못한다.
+
+mongodb의 데이터를 가지고 와서 해 주어야 한다.
+
+pom.xml에 라이브러리 등록
+
+ mydb에 접속하기 위해서 설정해 주어야 한다.
+
+
+
+![image-20200317173313172](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317173313172.png)
+
+설정파일을 이렇게 설정해준다. 
+
+
+
+![image-20200317170612102](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317170612102.png)
+
+빨간줄이 mongoDB 서버 접속 포트이다.
+
+
+
+![image-20200317173159925](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200317173159925.png)
+
+위와 같이 mongoDB에서 설정해준다.
+
+
+
+스키마가 없는 곳에서 작성한다는 점이
+
+오버헤드가 많아진다는 점이다.
+
+그리고 머신에 부담을 줄여주기 위해 데이터를 넣을때 update보다는 insert를 많이 사용한다. 그리고 json 베이스라는 점이 매력적이다.
+
+![image-20200318093154079](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093154079.png)
+
+
+
+![image-20200318093234076](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093234076.png)
+
+데이터가 없으면 위처럼 0개의 레코드가 추출되었다는 메시지가 뜬다.
+
+그래서 메시지를 추출하고 싶으면 아래와 같이 컬렉션에 데이터가 있는 db에 대해서 접근해야 아래와 같이 값이 export될 수 있다.
+
+ 
+
+
+
+![image-20200318093922892](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093922892.png)
+
+
+
+
+
+![image-20200318093958799](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318093958799.png)
+
+위와 같이 파일을 import한다.
+
+![image-20200318094332840](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318094332840.png)
+
+mongoimport에서 -하이픈 데신에 /를 사용한 이유가 version이 업데이트 되면서 사용방법이 바뀌었기 때문이다.
+
+-d 실행할 데이터베이스의 이름을 지정한다.
+
+-c import할 collection을 지정한다.
+
+-type 가져올 파일형식을 지정한다. 기본형식은 JSON이지만 .csv 및 .tsv 파일을 가져올 수있다. 
+
+-file 가져올 데이터가 들어있는 파일의 위치와 이름을 지정한다. 파일을 지정하지 않으면 mongoimport가 표준 입력에서 데이터를 읽는다.
+
+-headerline -type csv 또는 -type tsv를 사용하는 경우 첫 번째 로우를 필드 이름으로 사용한다. 그렇지 않으면 mongoimport가 오류를 반환한다. -headerline은 csv 또는 tsv 가져오기에만 사용된다.
+
+https://blog.naver.com/theswice/220946017455
+
+mongoimport관련 개념 정리된 블로그
+
+import된 db 확인하는 방법
+
+![image-20200318094259088](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318094259088.png)
+
+
+
+
+
+![image-20200318101829082](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318101829082.png)
+
+위와 같이 설정해 주어야 한다.
+
+![image-20200318102501910](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318102501910.png)
+
+
+
+![image-20200318174039685](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318174039685.png)
+
+위의 빨간색 요소들 선택
+
+
+
+![image-20200318102529305](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318102529305.png)
+
+이렇게 위와 같이 설정해준다.
+
+
+
+RDBMS는 그냥 jdbc 쓰면 된다.
+
+하지만 NoSQL은 조금 특수한 사항이기에 조금 사용방법이 다르다.
+
+1,2,4,5,6,8,9,11,12,13,14 은 최소 한 번씩은 써볼 것
+
+![image-20200318131704371](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318131704371.png)
+
+여기 4개는 관계형 데이터베이스이다.
+
+ElasticSearch도 급격히 상승하였다.
+
+Solr는 검색에 사용
+
+![image-20200318135116392](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20200318135116392.png)
+
+데이터 하나를 삭제할 때 위와같이 설정해 주어야 한다.
+
+...은 여러 조건이 가능하다
