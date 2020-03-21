@@ -396,3 +396,57 @@ splitstackshape
 
 컬럼갯수, row갯수, 타입, 유형, 실제 저장된 데이터....
 
+apply_test 
+
+-apply
+
+filter
+
+-데이터 정체
+
+-이상데이터 잘라내기
+
+crawl
+
+-웹페이지에서 데이터를 추출(csv저장)
+
+
+
+
+
+![image-20200321133050761](images/image-20200321133050761.png)
+
+* R내부의 샘플데이터셋을 가져오기
+
+![image-20200321133129985](images/image-20200321133129985.png)
+
+
+
+
+
+![image-20200321134043602](images/image-20200321134043602.png)
+
+
+
+ctrl + shift + m을 누르면 %>%가 나온다.
+
+library는 매 스크립트마다 올려주어야 한다.
+
+div_content>div.list_item.notice>div.list_hit
+
+//*[@id="div_content"]/div[3]/div[4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
