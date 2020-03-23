@@ -624,7 +624,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 명령어를 쳐서 재부팅시킨다.
 
-system kernel설정에 의해 방화벽이 다시 올라가 있다 그래서 아래의 명령어로 방화벽이 불가능하게 만든 다음에 상황을 살피고 다시 리부팅 시킨다.
+system kernel설정에 의해 방화벽이 다시 올라가 있다. 그래서 아래의 명령어로 방화벽이 불가능하게 만든 다음에 상황을 살피고 다시 리부팅 시킨다.
 
 [root@hadoop01 ~]# systemctl disable firewalld
 Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
@@ -793,6 +793,15 @@ There was 1 failed login attempt since the last successful login.
 logout
 Connection to hadoop02 closed.
 [hadoop@hadoop01 ~] ssh-keygen -t rsa
+# ssh-keygen으로 비밀번호 없이 로그인하기
+------------------------------
+#WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+원격지 호스트 인증서가 변경 되었다.
+ssh-keygen -R "해당서버 IP 주소"
+위의 명령어를 통해 키 값을 초기화 할 수 있다.
+키 값이 변경되었다면 이를 MITM(중간자)공격으로 판단해 접속을 못하게 막는다.
+authorized_key 파일 권한 644로 해 주어야 한다.
+
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/hadoop/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
@@ -830,10 +839,14 @@ and check to make sure that only the key(s) you wanted were added.
 
 [hadoop@hadoop01 .ssh]$
 
+#scp로 파일 복사하기
+scp -P 10022 filename pi@210.210.210.210:/tmp
+기본 포트 22번으로 접속해 파일을 전송한다. 
+
 
 ```
 
-
+https://cafe.naver.com/lifevside/44
 
 ssh hadoop02했을때 비밀번호를 묻지 말아야 한다.
 

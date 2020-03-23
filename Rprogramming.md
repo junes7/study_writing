@@ -438,9 +438,25 @@ div_content>div.list_item.notice>div.list_hit
 
 
 
+![image-20200323142710161](images/image-20200323142710161.png)
+
+여기서 77은 column개수이다.
 
 
 
+
+
+![image-20200323155800521](images/image-20200323155800521.png)
+
+왼쪽 KoNLP파일을 복사해서 옆에 R-3.6.3/library쪽에 붙여준다.
+
+https://www.clien.net/service/group/community?&od=T31&po=0
+
+참고 링크
+
+https://doorbw.tistory.com/172
+
+댓글을 50000개에서 1000개로 잘라준다. 길이(사이즈)가 당연히 다르다. text mining할때 쓰는 자료구조는 리스트이다. 사이즈는 다 다리고 모든 것들을 다 보관할 수 있다.
 
 
 
