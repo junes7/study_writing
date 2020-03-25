@@ -460,6 +460,44 @@ https://doorbw.tistory.com/172
 
 
 
+아래와 같이 색깔을 고를 수도 있다.
+
+![image-20200324094946963](images/image-20200324094946963.png)
+
+* qual
+
+![image-20200324095553894](images/image-20200324095553894.png)
+
+
+
+* div
+
+![image-20200324095228094](images/image-20200324095228094.png)
+
+* seq
+
+![image-20200324095515610](images/image-20200324095515610.png)
+
+brewer.pal.info 에서 maxcolor와 category를 확인한다.
+
+![image-20200324095636637](images/image-20200324095636637.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
