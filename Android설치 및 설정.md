@@ -932,13 +932,65 @@ startActivity(intent);
 
 
 
+d6d28a4		1	안정환
+71e53d3		2	차범근
+f3f6609		3	김어준
+bf05a2f		4	김범룡
+f6f59c5		5	김서연
+d326a4b		6	이민호
+af0cd41		7	이민호
+13b6027		8	박지성
+3bbfc7d		9	안정환
+4e60e8		10
+
+d6d28a4		1
+71e53d3		2
+
+![image-20200410093252134](images/image-20200410093252134.png)
+
+avd 실행이 안 될 때 위  언급한 .lock 파일을 제거한다.
 
 
 
 
 
+![image-20200410134332835](images/image-20200410134332835.png)
+
+여기가 내부 저장소이다.
 
 
 
 
+
+![image-20200410134616458](images/image-20200410134616458.png)
+
+sdcard는 외부 저장소이다.
+
+
+
+
+
+![image-20200410134721676](images/image-20200410134721676.png)
+
+
+
+권한 체크 해주는 작업을 해줄 것
+
+권한체크는 액티비티
+
+저장버튼을 눌렀을 때
+
+if권한이 설정:
+
+​		Toast("권한설정완료")
+
+else 권한 설정이 안 된 경우:
+
+Toast(권한 설정하세요.)
+
+
+
+File Read Write 참고 링크
+
+https://recipes4dev.tistory.com/113
 
