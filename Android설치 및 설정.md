@@ -994,3 +994,57 @@ File Read Write 참고 링크
 
 https://recipes4dev.tistory.com/113
 
+![image-20200411095714235](images/image-20200411095714235.png)
+
+Preferences를 적을때 위와 같이 적을 것
+
+
+
+웹 앱
+
+하이브리드 앱
+
+안드로이드 앱, 아이폰용 앱을 같이 만들어서 쓸 수 있게
+
+아이폰용 앱은 spring framework로 만든다.
+
+
+
+![image-20200411103116491](images/image-20200411103116491.png)
+
+DBHelper 클래스를 만든다.
+
+
+
+
+
+
+
+![image-20200411104831892](images/image-20200411104831892.png)
+
+
+
+
+
+
+
+공유 안하면 내 폰인 sqlite에 저장, 공유하면 서버인 oracle에 저장
+
+
+
+
+
+![image-20200411113440687](images/image-20200411113440687.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
