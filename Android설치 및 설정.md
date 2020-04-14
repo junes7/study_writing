@@ -1084,3 +1084,54 @@ Fragment
 
 
 
+![image-20200414100615881](images/image-20200414100615881.png)
+
+
+
+* 위와 같은 결과가 나오는 이유: 여기 위에서 빨간색은 여백을 통해 출력되는데 layout weight=1 속성에 의해 여백을 채우므로 여백이 없어서 사이즈가 나오지 않기 때문에 빨간색이 출력되지 않는다. 그래서 여백이 있는 초록색만 출력이 된다.
+
+
+
+
+
+* add는 프레그먼트 하나밖에 못 만든다. 그래서 한번 더 클릭하면 프레그먼트 두 번 생성되어서 에러가 난다.
+
+![image-20200414104600149](images/image-20200414104600149.png)
+
+여기 10개가 lifecycle을 생성하는 데 필요한 메소드이다.
+
+
+
+![image-20200414111253895](images/image-20200414111253895.png)
+
+
+
+
+
+Viewpager를 이용한 화면 전환
+
+손가락을 이용해서 페이지를 전환하려면 Viewpager를 사용해야 한다.
+
+미션
+
+1. Fragment로 작업한 예제를 ViewPager에 추가해서 동작하도록 완성
+
+   -Fragement를 한 개 더 추가(Map page)
+
+   지도가 출력되는 MainActivity도 추가
+
+   4개의 Fragment가 Viewpager로 실행될 수 있도록 할 것
+
+
+
+
+
+
+
+
+
+
+
+프레그먼트랑 관련된 pageradapter를 찾아볼 것 -> FragmentpagerAdapter
+
+![image-20200414164849034](images/image-20200414164849034.png)
