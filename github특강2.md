@@ -14,6 +14,34 @@ https://github.com/jojoldu/junior-recruit-scheduler
 
 https://github.com/milooy/remote-or-flexible-work-company-in-korea
 
+### 좋은 git commit 메시지를 위한 영어 사전
+
+https://blog.ull.im/engineering/2019/03/10/logs-on-git.html
+
+### 백엔드 개발자를 꿈꾸는 학생개발자에게
+
+https://d2.naver.com/news/3435170
+
+### 좋은 git 커밋 메시지를 작성하기 위한 7가지 약속
+
+https://meetup.toast.com/posts/106
+
+### git 책
+
+https://git-scm.com/book/ko/v2
+
+### resume
+
+
+
+### Markdown 이모지(이모티콘)
+
+https://gist.github.com/rxaviers/7360908
+
+### 브랜치 시나리오
+
+https://gist.github.com/edutak/fed5745cc86e4d9d32cef833d1d280a2
+
 ```bash
 $git status
 //위 명령어가 가장 중요하다.
@@ -454,3 +482,103 @@ https://blog.outsider.ne.kr/572
 https://startbootstrap.com/themes/resume/
 
 https://code.visualstudio.com/docs/?dv=win
+
+
+
+clone을 통해서 깃허브에 올린 파일 복제
+
+HEAD는 어떤 브랜치의 어떤 곳에 있는지를 나타내준다.
+
+
+
+push를 위해 쓴 branch는 삭제한 후 새로 master로 부터 받아온다.
+
+
+
+병합이 된 branch는 삭제한다.
+
+병합하려면 master에서 병합 작업 명령어를 입력한다.
+
+
+
+
+
+![image-20200424104535761](images/image-20200424104535761.png)
+
+
+
+독립적인 개발환경을 위해서 branch가 존재한다.
+
+
+
+1.branch를 만들어서 작업
+
+(작업의 뜻은 add commit)
+
+작업은 텍스트 파일에 편지를
+
+2git push origin {브랜치 이름}
+
+3.PR
+
+4.상대방거 merge or close
+
+
+
+1. fork
+2. clone
+3. 작업
+4. push
+5. PR(Pull Request)
+6. 확인 마스터가 merge or close
+
+
+
+#### 쉽게 이해할 수 있는 git 입문
+
+https://www.imaso.co.kr/archives/3668
+
+https://www.sprintseoul.org/
+
+git stash 
+
+임시 저장
+
+git stash list
+
+git pull origin master
+
+git stash pop
+
+git stash list
+
+그 다음에 commit 을 할 것
+
+git add .
+
+git commit -m ' '
+
+git push
+
+
+
+
+
+https://backlog.com/git-tutorial/kr/stepup/stepup7_6.html
+
+adobe xd
+
+트렐로(Trello)
+
+기존 명령 git push -u origin master
+
+강제 명령 git push -u origin +master
+
+
+
+
+
+
+
+
+
