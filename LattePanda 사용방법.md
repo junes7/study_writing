@@ -263,5 +263,21 @@ In hyundai
 
 
 
+![image-20200519100941256](images/image-20200519100941256.png)
 
+![image-20200519101036700](images/image-20200519101036700.png)
+
+MQTT통신을 위해서 왼쪽은 mosquitto-v를 통해서 서버를 켜 주었고 오른쪽은 mosquitto_sub 를 통해서 데이터를 수신받기 위해서 수신받는 곳 이름을 first라고 하였고 포트번호는 1883으로 설정해 주었다.
+
+![image-20200519103328359](images/image-20200519103328359.png)
+
+
+
+오른쪽 맨 밑에 mosquitto_pub는 메시지를 다른 subscribe(mosquitto_sub)로 값을 전달(공표)해 주기 위한 곳이고 여기서 -t 뒤에 전달해줄 곳의 이름과 -m 뒤에 전달해줄 메시지를 설정해 주어 전달해주면 mosquitto_sub에 전달받은 메시지가 출력된다. 
+
+![image-20200519104319894](images/image-20200519104319894.png)
+
+그리고 라떼판다 mosquitto_pub에서 호스트인 desktop에 mosquitto_sub(iot)로 값을 보내준 경우 아래 화살표가 가르킨 것 처럼 나온다. 
+
+![image-20200519112737249](images/image-20200519112737249.png)
 
