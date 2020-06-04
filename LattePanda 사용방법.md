@@ -74,13 +74,11 @@ a
 
 ![image-20200512172743970](images/image-20200512172743970.png)
 
-위 사이트에서 이것을 
-
-
+위 rxtx.qbang.org/wiki/index.php/Download사이트에서 rxtx-2.2pre2-bins.zip 파일을 클릭해서 다운로드 해준다.
 
 ![image-20200516102329124](images/image-20200516102329124.png)
 
-
+프로젝트 이름인 'arduinoSerial'을 오른쪽 클릭하고 Build Path -> Configure Build Path로 들어가서 Add External JARs로 들어간다.
 
 ![image-20200512164905076](images/image-20200512164905076.png)
 
@@ -179,7 +177,7 @@ In hyundai
 
 #### 		^
 
-#### 		|________오류를 검증하기 위한 코드
+#### 		|_________오류를 검증하기 위한 코드
 
 #### => Serial포트를 open하고 설정을 잡아놓은 상태
 
