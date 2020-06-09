@@ -1,8 +1,6 @@
 # Python 설치방법
 
-
-
-
+여기 밑에서 3.7.6 버전을 찾아서 클릭해준다.
 
 ![image-20200605101914666](images/image-20200605101914666.png)
 
@@ -36,21 +34,15 @@ python intro.py
 
 한글 깨짐을 극복하기 위해 왼쪽과 같이 설정해준다.
 
-
-
 vscode에서 터미널 이용하는 방법
 
 
 
 ctrl + shift + ` 터미널 여는 key
 
-
-
 ![image-20200605132655697](images/image-20200605132655697.png)
 
 빨간줄 부분 선택해서 Select Default Shell -> git bash 선택
-
-
 
 code 는 vscode에서만 사용할 수 있다.
 
@@ -265,25 +257,173 @@ mv gremmer/ grammar
 
 
 
+! tab을 누르면 전체 html요소가 다 만들어진다.
+
+elastic search 같은 경우에는 우리가 더 쉽게 찾을 수 있는 내용들이 포함되어 있다.
+
+
+
+### HTML은 정보와 구조화 | CSS는 styling 정의
+
+아래의 설치를 통해 vscode에서 바로 구현한 웹 페이지 결과를 띄울 수 있다.
+
+![image-20200609100456557](images/image-20200609100456557.png)
+
+위와 같이 클릭해서 'open in browser'를 설치해준다. 그리고 alt + b 를 누르면 구현한 웹 페이지 결과를 볼 수 있다.
+
+
+
+relative는 자기 자신이 있었던 위치를 고수하고 이동하는거고
+
+absolute는 자기 자신이 있던 위치를 무시하고 새로 이동한다.
+
+내 부모 속성들 중 static 이 아닌 부모를 기준으로 움직인다.
+
+
+
+z-index는  z축의 값을 100으로 주어 3차원으로 뷰를 볼 수 있도록 해준다.
+
+장미가족의 태그교실
+
+
+
+CDN 활용을 통해 Bootstrap에 작성된
+
+ctrl + shift + p 를 누르면 검색할 수 있는 창이 뜬다.
+
+거기서 Preferences: open settings: json 가서 적용되는 탭 간격 설정을 적어준다.
+
+* vs code 탭 간격 설정 검색해서 참고할 것!!
+
+그리고 웹 페이지를 구현할 때 동일한 작업에 대해 동시에 처리하고 싶으면 ctrl + alt + ↓ (방향 키)를 눌러 아래와 같이 동시에 작업하고 싶은 곳에 커서를 두어 동시에 코드를 입력할 수 있다.
+
+![image-20200609154151424](images/image-20200609154151424.png)
+
+참고 링크
+
+https://getbootstrap.com/docs/4.5/layout/grid/#row-columns
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col bg-danger border">그리드 시스템</div>
+      <div class="col bg-danger border">그리드 시스템</div>
+      <div class="col bg-danger border">그리드 시스템</div>
+    </div>
+    <div class="row">
+      <div class="col bg-danger border">그리드 시스템</div>
+      <div class="col bg-danger border">그리드 시스템</div>
+    </div>
+    <div class="row">
+      <div class="col-3 bg-primary border">그리드 시스템</div>
+      <div class="col-6 bg-success border">그리드 시스템</div>
+      <div class="col-3 bg-warning border">그리드 시스템</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-3 bg-primary border">그리드 시스템</div>
+      <div class="col-3 offset-3 bg-primary border">그리드 시스템</div>
+      <div class="col-3 bg-primary border">그리드 시스템</div>
+    </div>
+    <hr>
+    <div class="row justify-content-start">
+      <div class="col-3 bg-danger border">그리드 시스템</div>
+      <div class="col-3 bg-danger border">그리드 시스템</div>
+      <div class="col-3 bg-danger border">그리드 시스템</div>
+    </div>
+    <!-- 중앙에 박스를 할당하고 좌 우로 빈 공간의 크기를 할당 -->
+    <div class="row justify-content-center">
+      <div class="col-3 bg-danger border">그리드 시스템</div>
+      <div class="col-3 bg-danger border">그리드 시스템</div>
+      <div class="col-3 bg-danger border">그리드 시스템</div>
+    </div>
+    <!-- 먼저 좌 우 끝으로 붙여놓고 그 다음 빈 공간의 크기를 할당 -->
+    <div class="row justify-content-between">
+      <div class="col-3 bg-danger">그리드 시스템</div>
+      <div class="col-3 bg-danger">그리드 시스템</div>
+      <div class="col-3 bg-danger">그리드 시스템</div>
+    </div>
+    <!-- 빈 공간의 크기를 빈 공간의 개수만큼 할당 -->
+    <div class="row justify-content-around">
+      <div class="col-3 bg-danger">그리드 시스템</div>
+      <div class="col-3 bg-danger">그리드 시스템</div>
+      <div class="col-3 bg-danger">그리드 시스템</div>
+    </div>
+    <hr>
+    <div class="row justify-content-end">
+      <div class="col-3 bg-danger">그리드 시스템</div>
+      <div class="col-3 bg-danger">그리드 시스템</div>
+      <div class="col-3 bg-danger">그리드 시스템</div>
+    </div>
+    <hr>
+    <div class="row" style="height: 100px;">
+      <div class="col align-self-start bg-secondary">그리드 시스템</div>
+      <div class="col align-self-center bg-secondary">그리드 시스템</div>
+      <div class="col align-self-end bg-secondary">그리드 시스템</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col col-sm-12 col-md-6 col-lg-3 bg-dark text-light border">그리드 시스템</div>
+      <div class="col col-sm-12 col-md-6 col-lg-3 bg-dark text-light border">그리드 시스템</div>
+      <div class="col col-sm-12 col-md-6 col-lg-3 bg-dark text-light border">그리드 시스템</div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
+```
 
 
 
 
 
+![image-20200609154624286](images/image-20200609154624286.png)
+
+구글 뉴스, 네이버 뉴스, CSS is awesome
 
 
 
+### Django 설치하는 방법
+
+장고 프레임워크 설치할 때는 아래와 같이 pip install django==2.1.15 설치할 것
+
+![image-20200609151851361](images/image-20200609151851361.png)
+
+설치한 후 잘 설치 되었는지 아래와 같이 명령어를 입력해서 확인해준다.
+
+![image-20200609152235851](images/image-20200609152235851.png)
+
+장고 프로젝트 시작하는 방법
+
+![image-20200609152831027](images/image-20200609152831027.png)
+
+.gitignore 설정 하는 방법
+
+![image-20200609164214938](images/image-20200609164214938.png)
+
+여기서 위와 같이 입력하고 생성버튼을 누르면
+
+![image-20200609164337495](images/image-20200609164337495.png)
+
+그러면 위와 같이 파일이 생성된다.
 
 
 
-
-
-
-
-
-
-
-
+그랬을 때 .gitignore 파일을 생성해 넣어주면 된다.
 
 
 
