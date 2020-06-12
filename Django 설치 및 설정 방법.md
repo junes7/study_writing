@@ -33,7 +33,7 @@ python manage.py runserver
   * 전체 Django와 관련된 모든 명령어를 manage.py를 통해 실행 합니다.
 
 * `__init__.py`
-  * 현재 `__init__.py`파일이 존재하는 폴더를 하나의 프로젝트, 혹은 패키지로 인식하게 해주는 파일 
+  * 현재 `__init__.py`파일이 존재하는 폴더를 하나의 프로젝트, 혹은 패키지로 인식하게 해주는 파일
 
 * settings.py
   * 현재 프로젝트의 전체적인 설정 및 관리를 위해 존재하는 파일
@@ -57,9 +57,64 @@ settings.py 에서 설정해 주어야 하는 요소
 
 
 
+![image-20200610092347756](images/image-20200610092347756.png)
 
 
 
+* admin.py
+* apps.py
+* models.py
+* tests.py
+
+* views.py
+
+그리고 .gitignore 파일도 만들어준다.
+
+.gitignore 설정 하는 방법
+
+![image-20200609164214938](images/image-20200609164214938.png)
+
+여기서 위와 같이 입력하고 생성버튼을 누르면
+
+![image-20200609164337495](images/image-20200609164337495.png)
+
+그러면 위와 같이 파일이 생성된다.
+
+그랬을 때 .gitignore 파일을 생성해 넣어주면 된다.
 
 
+
+url  view template 순서로 과정을 진행할 것이다.
+
+https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Introduction 여기로 들어가면
+
+아래의 그림 구성도를 볼 수 있다.
+
+![image-20200610095941338](images/image-20200610095941338.png)
+
+templates 폴더를 경로로 설정해주지 않는 이유
+
+파일 이름만 넣어주어도 자동으로 templates 폴더 이하의 파일을 우선순위로 찾기 때문에 파일 이름만 넣어주어도 된다. 
+
+이름 나이를 리스트로 만들어 넘겨줄 것
+
+skribbl.io
+
+페르소나
+
+수요자가 필요한 기능에 집중해서 기획할 것!!
+
+가용 가능한 웹 서비스
+
+타슈가 있는지 없는지
+
+수요예측 한 정거장에 데이터 수집
+
+자전거 리필하는 수량
+
+날씨, 시간에 대한 data
+
+Agile
+
+minimalism하게 계획을 세울 것
 
