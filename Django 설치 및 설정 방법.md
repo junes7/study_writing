@@ -118,3 +118,48 @@ Agile
 
 minimalism하게 계획을 세울 것
 
+DB구조 자체를 정의: schema
+
+Django sqllite3
+
+오브젝트 객체랑 매핑해주는것
+
+파이썬에서 객체 정의
+
+열: 컬럼 | 행: 레코드
+
+
+
+
+
+
+
+![image-20200615142129113](images/image-20200615142129113.png)
+
+위와 같이 DB를 정의하고 
+
+![image-20200615142517824](images/image-20200615142517824.png)
+
+아래와 같이 python manage.py makemigrations 명령어를 주면 0001_initial.py라는  첫번째 버전의 DB모델이 정의된 파일이 생성이 된다.
+
+그리고 python manage.py migrate articles를 이용해 DB모델을 articles란 앱에 적용해 준다.
+
+
+
+![image-20200615143419497](images/image-20200615143419497.png)
+
+그리고 아래처럼 python manage.py shell을 치면 db로 접근 가능한 python 쉘 창을 켤 수 있다.
+
+![image-20200615152328918](images/image-20200615152328918.png)
+
+ Admin 관리자 페이지에 접근하기 위해서는 아래와 같은 명령어를 통해서 접근해야 한다.
+
+![image-20200615163442769](images/image-20200615163442769.png)
+
+
+
+![image-20200615163227430](images/image-20200615163227430.png)
+
+아래와 같이 글이 정리된다.
+
+![image-20200615163135817](images/image-20200615163135817.png)
