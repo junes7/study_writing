@@ -163,3 +163,16 @@ Django sqllite3
 아래와 같이 글이 정리된다.
 
 ![image-20200615163135817](images/image-20200615163135817.png)
+
+The Web Framework for perfectionists with deadlines → django
+
+마감기한에 대한  완벽주의자들을 위한 웹 프레임워크
+
+![image-20200616094003318](images/image-20200616094003318.png)chrome extension의 위 프로그램을 통해 파일 구조를 볼 수 있다.
+
+
+
+![image-20200616094256530](images/image-20200616094256530.png)
+
+그리고 위 사이트를 통해서 django 구조를 파악하고 쓰이는 메소드의 구조도 파악할 수 있다.
+
