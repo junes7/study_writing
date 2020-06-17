@@ -176,3 +176,9 @@ The Web Framework for perfectionists with deadlines → django
 
 그리고 위 사이트를 통해서 django 구조를 파악하고 쓰이는 메소드의 구조도 파악할 수 있다.
 
+![image-20200617170314646](images/image-20200617170314646.png)
+
+django bootstrap 4를 설치하고 위의 2번처럼 mysite->settings.py에서 등록해준다.
+
+
+
