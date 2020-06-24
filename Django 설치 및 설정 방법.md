@@ -187,3 +187,49 @@ https://django-bootstrap4.readthedocs.io/en/latest/widgets.html
 https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html
 
 https://getbootstrap.com/docs/4.5/layout/utilities-for-layout/
+
+
+
+## django_relation
+
+#### django-extension 설치 및 실행방법
+
+![image-20200622094209549](images/image-20200622094209549.png)
+
+
+
+위의 숫자 순서대로 실행해주면 된다.
+
+![image-20200622100027358](images/image-20200622100027358.png)
+
+그리고 위와 같이 ipython을 설치해주고 
+
+![image-20200622100100070](images/image-20200622100100070.png)
+
+그리고 위와 같이 등록을 해준다.
+
+
+
+
+
+![image-20200622101703777](images/image-20200622101703777.png)
+
+article에서 전체를 불러올 때 위와 같이 사용한다.
+
+
+
+
+
+### django admin 계정 생성할 때 아래와 같은 과정을 거쳐야 한다.
+
+### 그리고 실행할 때 vscode 하나만 켜 놓고 실행할 것
+
+![image-20200622161732703](images/image-20200622161732703.png)
+
+
+
+
+
+![image-20200624150832658](images/image-20200624150832658.png)
+
+이미지 사이즈를 관리해주기 위해서 위와같이 설치를 해서 관리해 주어야 한다.
