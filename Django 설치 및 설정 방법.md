@@ -233,3 +233,17 @@ article에서 전체를 불러올 때 위와 같이 사용한다.
 ![image-20200624150832658](images/image-20200624150832658.png)
 
 이미지 사이즈를 관리해주기 위해서 위와같이 설치를 해서 관리해 주어야 한다.
+
+![image-20200625110747778](images/image-20200625110747778.png)
+
+의사와 환자 모델은 위와 같이 설정해 주어야 한다.
+
+
+
+이 사이트를 통해서 원하는 icon을 얻을 수 있다.
+
+https://fontawesome.com/icons/heart?style=solid
+
+https://getbootstrap.com/docs/4.5/components/navbar/
+
+https://getbootstrap.com/docs/4.5/getting-started/introduction/
